@@ -2,11 +2,10 @@
 
 /**
  * print_last_digit - prints last digit of given integer
- * @r - integer to be returned last digit of
+ * @r: integer to be returned last digit of
  *
  * Return: value of last digit of given int
  */
-
 
 int print_last_digit(int r)
 {
