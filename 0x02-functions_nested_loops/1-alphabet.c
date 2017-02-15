@@ -1,5 +1,5 @@
-#include <unistd.h>
 #include "holberton.h"
+
 /**
  * print_alphabet - prints alphabet to standard output
  *
