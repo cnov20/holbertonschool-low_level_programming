@@ -1,13 +1,21 @@
+#include <unistd.h>
 #include "holberton.h"
-
 /**
- * print_alphabet - writes alphabet in lowercase to standard output
+ * print_alphabet - prints alphabet to standard output
  *
- * Return: void
+ *
+ * On error, -1 is returned, and errno is set appropriately.
  */
 
-int main(void)
+void print_alphabet(void)
 {
-	print_alphabet();
-	return (0);
+	char ch[] = "abcdefghijklmnopqrstuvwxyz";
+	int i = 0;
+
+	while (i < 27)
+	{
+		_putchar(ch[i]);
+		i++;
+	}
+	_putchar('\n');
 }
