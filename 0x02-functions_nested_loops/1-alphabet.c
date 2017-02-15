@@ -1,20 +1,19 @@
 #include "holberton.h"
 
 /**
- * print_alphabet - prints alphabet to standard output
+ * print_alphabet - Entry point
  *
  * Return: void
  */
 
 void print_alphabet(void)
 {
-	char ch[] = "abcdefghijklmnopqrstuvwxyz";
-	int i = 0;
+	int a = 'a';
 
-	while (i < 27)
+	while (a <= 'z')
 	{
-		_putchar(ch[i]);
-		i++;
+		_putchar(a);
+		a++;
 	}
 	_putchar('\n');
 }
