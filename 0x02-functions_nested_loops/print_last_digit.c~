@@ -1,0 +1,15 @@
+#include "holberton.h"
+
+int print_last_digit(int r)
+{
+	int l;
+	l = r % 10;
+
+	if (r < 0)
+	{
+		l = l * -1;
+	}
+
+	_putchar(l + '0');
+	return(l);
+}

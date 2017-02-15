@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+/*
+ * main - entry of program
+ *
+ * func -
+ *
+ * putchar -
+ *
+ * Return: (0) - always - success
+ *
+ */
+
+int main(void)
+{
+	int i = 0;
+
+	while (i < 100)
+	{
+		putchar(i);
+		if (i != 99)
+		{
+			putchar(',');
+			putchar(' ');
+		}
+		i++;
+
+		return (0);
+}
