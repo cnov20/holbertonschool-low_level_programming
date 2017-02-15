@@ -9,15 +9,14 @@
 
 void print_alphabet_x10(void)
 {
-	char ch[] = "abcdefghijklmnopqrstuvwxyz";
 	int i = 0;
 	int j;
 		while (i < 10)
 		{
-			j = 0;
-			while (j < 27)
+			j = 'a'
+			while (j <= 'z')
 			{
-				_putchar(ch[j]);
+				_putchar(j);
 				j++;
 			}
 
