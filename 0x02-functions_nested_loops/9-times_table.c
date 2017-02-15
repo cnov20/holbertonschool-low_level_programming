@@ -1,12 +1,40 @@
 #include "holberton.h"
+
 /**
- * main - check the code for Holberton School students.
+ * times_table - Print the multiplaction table for the number 9
  *
- * Return: Always 0.
  */
 
-int main(void)
+void times_table(void)
 {
-	times_table();
-	return (0);
+	int i = 0;
+	int j;
+	int result;
+
+	while (i < 10)
+	{
+		j = 1;
+		_putchar('0');
+		while (j < 10)
+		{
+			result = i * j;
+			if (result < 10)
+			{
+				_putchar(',');
+				_putchar(' ');
+				_putchar(' ');
+				_putchar(result + '0');
+			}
+			else
+			{
+				_putchar(',');
+				_putchar(' ');
+				_putchar(result / 10 + '0');
+				_putchar(result % 10 + '0');
+			}
+			j++;
+		}
+		_putchar('\n');
+		i++;
+	}
 }
