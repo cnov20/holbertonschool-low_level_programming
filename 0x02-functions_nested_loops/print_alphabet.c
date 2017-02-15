@@ -1,19 +1,18 @@
 #include <unistd.h>
 #include "holberton.h"
 /**
- * _putchar - writes the character c to stdout
- * @c: The character to print
+ * print_alphabet - prints alphabet to standard output
  *
- * Return: On success 1.
+ *
  * On error, -1 is returned, and errno is set appropriately.
  */
 
 void print_alphabet(void)
 {
-	char ch[] = "Holberton";
+	char ch[] = "abcdefghijklmnopqrstuvwxyz";
 	int i = 0;
 
-	while (i < 11)
+	while (i < 27)
 	{
 		_putchar(ch[i]);
 		i++;
