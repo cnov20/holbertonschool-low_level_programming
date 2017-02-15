@@ -1,6 +1,4 @@
 #include "holberton.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 /**
  *print_times_table - prints variable multiplaction table for given number
@@ -25,13 +23,14 @@ void print_times_table(int n)
 				t3 = result / 100;
 				_putchar(',');
 				_putchar(' ');
+
 				if (result < 10)
 				{
 					_putchar(',');
 					_putchar(' ');
 					_putchar(t3 + '0');
 				}
-				else if (result > 100)
+				else if (result >= 100)
 				{
 					_putchar(t1 + '0');
 					_putchar(t2 + '0');
@@ -45,7 +44,9 @@ void print_times_table(int n)
 					_putchar(t3 + '0');
 				}
 			}
-			_putchar('\n');
+
 		}
+		_putchar('\n');
 	}
+
 }
