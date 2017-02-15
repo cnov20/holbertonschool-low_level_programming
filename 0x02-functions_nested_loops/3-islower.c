@@ -9,13 +9,15 @@
  * Return: 1 - if successful - 0 - if unsucessful
  */
 
-int _islower(int c) {
+int _islower(int c)
+{
 
 	if (c >= 'a' && c <= 'z')
 	{
 		return (1);
 	}
-	else {
-		return(0);
+	else
+	{
+		return (0);
 	}
 }
