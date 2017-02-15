@@ -1,6 +1,6 @@
 #include "holberton.h"
+
 /**
- *
  * main - entry point of program
  *
  *
