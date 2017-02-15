@@ -1,7 +1,6 @@
 #include "holberton.h"
 /**
- * _putchar - writes the character c to stdout
- * @c: The character to print
+ * print_alphabet_x10 - writes the alphabet to standard output
  *
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
@@ -9,8 +8,8 @@
 
 void print_alphabet_x10(void)
 {
-        char ch[] = "abcdefghijklmnopqrstuvwxyz";
-        int i = 0;
+	char ch[] = "abcdefghijklmnopqrstuvwxyz";
+	int i = 0;
 	int j;
 		while (i < 10)
 		{
