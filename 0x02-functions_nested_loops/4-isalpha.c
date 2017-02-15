@@ -1,8 +1,8 @@
 #include "holberton.h"
 
 /**
- * _isalpha - check the code for Holberton School students.
- * @c - character to iterate through
+ * _isalpha - checks to see if character input is alpha.
+ * @c: character to iterate through
  *
  * Return: 1 (success) - 0 (fail)
  */
