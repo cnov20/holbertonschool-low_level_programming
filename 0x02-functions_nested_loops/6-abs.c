@@ -1,22 +1,25 @@
 #include "holberton.h"
-#include <stdio.h>
 
 /**
- * main - check the code for Holberton School students.
+ * _abs - calculate and return abasolute value of integer
+ * @r: integer to be converted to abs value
  *
- * Return: Always 0.
+ * Return: absolute value of int
+ *
  */
-int main(void)
-{
-	int r;
 
-	r = _abs(-1);
-	printf("%d\n", r);
-	r = _abs(0);
-	printf("%d\n", r);
-	r = _abs(1);
-	printf("%d\n", r);
-	r = _abs(-98);
-	printf("%d\n", r);
-	return (0);
+int _abs(int r)
+{
+	if (r > 0)
+	{
+		return (r * 1);
+	}
+	else if (r < 0)
+	{
+		return (r * -1);
+	}
+	else
+	{
+		return (0);
+	}
 }
