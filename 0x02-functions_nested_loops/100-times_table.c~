@@ -1,0 +1,42 @@
+#include "holberton.h"
+#include <stdio.h>
+#include <stdlib.h>
+
+void print_times_table(int n)
+{
+        int i = 0;
+        int j;
+        int result;
+
+	if (n > 15 || n < 0)
+	{
+
+	}
+
+	while (i < 15 && i > 0)
+        {
+                j = 1;
+                _putchar('0');
+                while (j < 10)
+                {
+                        result = i * j;
+                        if (result < 10)
+                        {
+                                _putchar(',');
+                                _putchar(' ');
+                                _putchar(' ');
+                                _putchar(result + '0');
+                        }
+                        else
+                        {
+                                _putchar(',');
+                                _putchar(' ');
+                                _putchar(result / 10 + '0');
+                                _putchar(result % 10 + '0');
+                        }
+                        j++;
+                }
+                _putchar('\n');
+                i++;
+        }
+}

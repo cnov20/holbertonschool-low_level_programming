@@ -1,16 +1,29 @@
 #include "holberton.h"
+#include <stdlib.h>
+#include <stdio.h>
 
 /**
- * main - check the code for Holberton School students.
+ * print_to_98 - prints numbers either above or below 98, ending with 98
+ * @n: integer to be printed
  *
- * Return: Always 0.
  */
-int main(void)
+
+
+void print_to_98(int n)
 {
-	print_to_98(0);
-	print_to_98(98);
-	print_to_98(111);
-	print_to_98(81);
-	print_to_98(-10);
-	return (0);
+
+	while (n > 98)
+	{
+		printf("%d, ", n);
+		n--;
+	}
+	while (n < 98)
+	{
+		printf("%d, ", n);
+		n++;
+	}
+	if (n == 98)
+	{
+		printf("%d\n", n);
+	}
 }
