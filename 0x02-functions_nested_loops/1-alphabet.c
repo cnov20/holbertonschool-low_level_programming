@@ -4,7 +4,7 @@
  * print_alphabet - prints alphabet to standard output
  *
  *
- * On error, -1 is returned, and errno is set appropriately.
+ * Return: 0
  */
 
 void print_alphabet(void)
