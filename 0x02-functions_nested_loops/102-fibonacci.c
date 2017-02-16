@@ -10,17 +10,26 @@
 
 int main(void)
 {
-	unsigned long num1 = 0;
+	unsigned long num1 = 1;
 	unsigned long num2 = num1 + 1;
+	printf("%lu, %lu, ", num1, num2);
+
 	unsigned long result;
 	char i;
 
-	for (i = 0; i <= 50; i++)
+	for (i = 0; i < 48; i++)
 	{
 		result = num1 + num2;
+		if (i != 47)
+		{
+		printf("%lu, ", result);
+		}
+		else
+		{
+			printf("%lu\n", result);
+		}
 		num1 = num2;
 		num2 = result;
-		printf("%lu, \n",result);
 	}
 
 }
