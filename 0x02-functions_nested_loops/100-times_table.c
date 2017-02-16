@@ -1,8 +1,8 @@
 #include "holberton.h"
 
 /**
- * times_table - Print the multiplaction table for the a given number
- * @n: Integer parameter to find multiplaction table for
+ * print_times_table - Print the multiplaction table for the a given number
+ * @n: Integer parameter to find multiplaction table
  */
 
 void print_times_table(int n)
@@ -46,4 +46,5 @@ void print_times_table(int n)
 		}
 
 	}
+
 }
