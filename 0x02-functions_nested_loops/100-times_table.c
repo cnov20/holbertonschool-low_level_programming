@@ -1,49 +1,52 @@
 #include "holberton.h"
 
 /**
- *print_times_table - prints variable multiplaction table for given number
- *@n: multiplication factor
+ * times_table - Print the multiplaction table for the a given number
+ * @n: Integer parameter to find multiplaction table for
  */
 
 void print_times_table(int n)
 {
-	int result, i, j, t1, t2, t3;
+	int i = 0, j, result;
 
-	if (n > 15 || n < 0)
+	if (n <= 15 && n >= 0)
 	{
-		return;
-		for (i = 0; i <= n; i++)
+		while (i <= n)
 		{
+			j = 1;
 			_putchar('0');
-			for (j = 1; j <= n; j++)
+			while (j <= n)
 			{
 				result = i * j;
-				t1 = result / 100;
-				t2 = result / 10 % 10;
-				t3 = result % 10;
-				_putchar(',');
-				_putchar(' ');
-				if (result < 10)
+				if (result >= 10 && result <= 99)
 				{
 					_putchar(',');
 					_putchar(' ');
-					_putchar(t3 + '0');
+					_putchar(' ');
+					_putchar(result / 10 + '0');
+					_putchar(result % 10 + '0');
 				}
 				else if (result >= 100)
 				{
-					_putchar(t1 + '0');
-					_putchar(t2 + '0');
-					_putchar(t3 + '0');
+					_putchar(',');
+					_putchar(' ');
+					_putchar(result / 100 + '0');
+					_putchar(result / 10 % 10 + '0');
+					_putchar(result % 10 + '0');
 				}
 				else
 				{
+					_putchar(',');
 					_putchar(' ');
-					_putchar(t2 + '0');
-					_putchar(t3 + '0');
+					_putchar(' ');
+					_putchar(result + '0');
 				}
+
+				j++;
 			}
 			_putchar('\n');
+			i++;
 		}
-	}
 
+	}
 }
