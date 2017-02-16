@@ -1,0 +1,37 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <time.h>
+
+/**
+ * main - Entry point of program
+ *
+ * If / Else - Means of program being able to determine what to output
+ *
+ * Printf - In conjunction with if/else statements, this prints output
+ *
+ * Return: (0) - Always - Success
+ */
+
+int main(void)
+{
+	int n;
+
+	srand(time(0));
+
+	n = rand() - RAND_MAX / 2;
+
+	if (n > 0)
+	{
+		printf("%d %s", n, "is positive\n");
+	}
+	else if (n == 0)
+	{
+		printf("%d %s", n, "is zero\n");
+	}
+	else if (n < 0)
+	{
+		printf("%d %s", n, "is negative\n");
+	}
+
+	return (0);
+}
