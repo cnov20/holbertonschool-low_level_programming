@@ -2,9 +2,15 @@
 #include <stdlib.h>
 #include "holberton.h"
 
+/**
+ * main - print fibonacci numbers
+ *
+ * Return: 0 - always - success
+ */
+
 int main(void)
 {
-       	unsigned long num1 = 0;
+	unsigned long num1 = 0;
 	unsigned long num2 = num1 + 1;
 	unsigned long result;
 	char i;
@@ -14,7 +20,7 @@ int main(void)
 		result = num1 + num2;
 		num1 = num2;
 		num2 = result;
-		printf("%lu, %lu\n", num1, result);
+		printf("%lu, \n",result);
 	}
 
 }
