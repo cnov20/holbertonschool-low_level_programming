@@ -1,0 +1,2 @@
+int _putchar(short n);
+void  print_number(int n);
