@@ -9,14 +9,11 @@
 int main(void)
 {
 	unsigned long num1 = 1;
-
 	unsigned long num2 = num1 + 1;
+	unsigned long result;
+	char i;
 
 	printf("%lu, %lu, ", num1, num2);
-
-	unsigned long result;
-
-	char i;
 
 	for (i = 0; i < 48; i++)
 	{
@@ -29,7 +26,9 @@ int main(void)
 		{
 			printf("%lu\n", result);
 		}
+
 		num1 = num2;
 		num2 = result;
 	}
+	return (0);
 }
