@@ -10,7 +10,7 @@
 int main(void)
 {
 	unsigned long num1 = 1;
-	unsigned long num2 = num1 + 1;
+	unsigned long num2 = 2;
 	unsigned long result = 0;
 	unsigned long eventotal = 2;
 
@@ -22,9 +22,9 @@ int main(void)
 			eventotal = eventotal + result;
 		}
 		num1 = num2;
-		result = num2;
+		num2 = result;
 	}
-	printf("%lu", result);
+	printf("%lu", eventotal);
 	printf("\n");
 	return (0);
 }
