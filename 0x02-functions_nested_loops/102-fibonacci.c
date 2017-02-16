@@ -1,6 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include "holberton.h"
 
 /**
  * main - print fibonacci numbers
@@ -11,10 +9,13 @@
 int main(void)
 {
 	unsigned long num1 = 1;
+
 	unsigned long num2 = num1 + 1;
+
 	printf("%lu, %lu, ", num1, num2);
 
 	unsigned long result;
+
 	char i;
 
 	for (i = 0; i < 48; i++)
@@ -22,7 +23,7 @@ int main(void)
 		result = num1 + num2;
 		if (i != 47)
 		{
-		printf("%lu, ", result);
+			printf("%lu, ", result);
 		}
 		else
 		{
@@ -31,5 +32,4 @@ int main(void)
 		num1 = num2;
 		num2 = result;
 	}
-
 }
