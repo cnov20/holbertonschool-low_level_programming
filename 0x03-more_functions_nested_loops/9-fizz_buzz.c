@@ -1,9 +1,13 @@
-#include "holberton.h"
 #include <stdio.h>
 #include <stdlib.h>
-
 /**
  * main - entry point of program
+ *
+ * Description: Fizz-Buzz - print numbers 1 through 100
+ * - if divisible by 3 - print 'Fizz' instead of number
+ * - if divisible by 5 - print 'Buzz' instead of number
+ * - if divisible by both 3 and 5 - print 'FizzBuzz'
+ * instead of number
  *
  * Return: 0 - success - always
  */
@@ -34,7 +38,6 @@ int main(void)
 		}
 		i++;
 	}
-
 	printf("\n");
 	return (0);
 }
