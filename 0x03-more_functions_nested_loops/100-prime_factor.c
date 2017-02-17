@@ -12,13 +12,21 @@
 int main(void)
 {
 	unsigned long n = 612852475143;
+	unsigned long i = 3;
 
-	while (n > 3)
+	while (n > i)
 	{
-		n /= 3;
-		printf("%lu\n", n);
+		if (n % i == 0)
+		{
+			n = n / i;
+		}
+		else
+		{
+			i++;
+		}
 
 	}
+	printf("%lu\n", i);
 
 	return (0);
 }
