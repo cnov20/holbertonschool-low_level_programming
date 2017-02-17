@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * print_square - function that prints a triangle shape followed by new line
+ * print_triangle - function that prints a triangle shape followed by new line
  * @size: variable that represents the size of the triangle
  *
  */
