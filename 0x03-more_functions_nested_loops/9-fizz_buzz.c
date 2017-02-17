@@ -17,12 +17,11 @@ int main(void)
 {
 	unsigned char i;
 
-	i = 1;
-
-	printf("1");
+	i = 2;
+	printf("%d", 1);
 	while (i <= 100)
 	{
-		if (i % 15 == 0)
+		if (i % (5 * 3) == 0)
 		{
 			printf(" %s", "FizzBuzz");
 		}
@@ -38,6 +37,7 @@ int main(void)
 		{
 			printf(" %d", i);
 		}
+
 		i++;
 	}
 	printf("\n");
