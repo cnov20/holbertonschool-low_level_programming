@@ -16,17 +16,17 @@ int main(void)
 	i = 1;
 	while (i <= 100)
 	{
-		if (i % 3 == 0)
+		if (i % 15 == 0)
 		{
-			printf("%s ", "Fizz");
+			printf("%s ", "FizzBuzz");
 		}
 		else if (i % 5 == 0)
 		{
 			printf("%s ", "Buzz");
 		}
-		else if (i % 15 == 0)
+		else if (i % 3 == 0)
 		{
-			printf("%s ", "FizzBuzz");
+			printf("%s ", "Fizz");
 		}
 		else
 		{
@@ -34,6 +34,7 @@ int main(void)
 		}
 		i++;
 	}
+
 	printf("\n");
 	return (0);
 }
