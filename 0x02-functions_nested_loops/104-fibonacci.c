@@ -1,7 +1,8 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 /**
- * main - print fibonacci numbers
+ * main - print first 100 fibonacci numbers
  *
  * Return: 0 - always - success
  */
@@ -31,3 +32,4 @@ int main(void)
                 num2 = result;
         }
         return (0);
+}
