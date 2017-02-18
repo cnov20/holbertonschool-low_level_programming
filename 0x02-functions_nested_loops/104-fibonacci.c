@@ -16,7 +16,7 @@ int main(void)
 
         printf("%lu, %lu, ", num1, num2);
 
-        for (i = 0; i < 48; i++)
+        for (i = 0; i < 101; i++)
         {
                 result = num1 + num2;
                 if (i != 47)
