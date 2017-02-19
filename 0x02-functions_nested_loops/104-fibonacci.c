@@ -22,11 +22,11 @@ int main(void)
 		result = num1 + num2;
 		if (i != 95)
 		{
-			printf("%" PRIu64 "\n", result);
+			printf("%" PRIu64 ", ", result);
 		}
 		else
 		{
-			printf("%" PRIu64, result);
+			printf("%" PRIu64 "\n", result);
 		}
 		num1 = num2;
 		num2 = result;
