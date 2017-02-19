@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdint.h>
+#include <inttypes.h>
 
 /**
  * main - print first 98 fibonacci numbers
@@ -14,18 +15,18 @@ int main(void)
 	uint64_t result;
 	char i;
 
-	printf("%lu, %lu, ", num1, num2);
+	printf("%ld, %lu, ", num1, num2);
 
-	for (i = 0; i < 97; i++)
+	for (i = 0; i < 96; i++)
 	{
 		result = num1 + num2;
 		if (i != 95)
 		{
-			printf("%lu, ", result);
+			printf("%" PRIu64 "\n", result);
 		}
 		else
 		{
-			printf("%lu\n", result);
+			printf("%" PRIu64, result);
 		}
 		num1 = num2;
 		num2 = result;
