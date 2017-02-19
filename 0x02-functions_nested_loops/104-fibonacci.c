@@ -15,7 +15,7 @@ int main(void)
 	uint64_t result;
 	char i;
 
-	printf("%" PRIu64 "%" PRIu64 , num1, num2);
+	printf("%" PRIu64 "%" PRIu64, num1, num2);
 
 	for (i = 0; i < 96; i++)
 	{
