@@ -1,6 +1,5 @@
 #include "holberton.h"
 
-
 /**
  * swap_int - takes two integer values and swaps them
  * @a: first ineger whose value is to be swapped
