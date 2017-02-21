@@ -5,7 +5,7 @@
  * @s: string taken in to find length of
  *
  * Return: i - string length
- */
+ **/
 
 int _strlen(char *s)
 {
