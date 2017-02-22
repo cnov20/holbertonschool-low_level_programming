@@ -23,7 +23,7 @@ void puts_half(char *str)
 	}
 	else
 	{
-		 second = (length - 1) / 2;
+		 second = (length + 1) / 2;
 	}
 	while (second < length)
 	{
