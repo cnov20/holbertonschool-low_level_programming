@@ -1,11 +1,11 @@
 #include "holberton.h"
 
 /**
- * _strcpy -
- *@dest:
- *@src:
+ * _strcpy - copies a string
+ *@dest: points to buffer
+ *@src: points to string
  *
- * Return:
+ * Return: the pointer to dest
  *
  */
 
