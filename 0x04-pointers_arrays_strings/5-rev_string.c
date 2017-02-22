@@ -9,38 +9,22 @@
 
 void rev_string(char *s)
 {
-        int i;
+	int i;
 	int j;
-	int length;
-	char str[100];
-	char rev[100];
-
-	length = _strlen(s);
+	char converter;
 
 	j = 0;
-	for (i = length - 1; i >= 0; i--);
-        {
-		rev = str[i];
+	while (s[j] != '\0')
+	{
 		j++;
-        }
-	rev[j] = '\0';
-}
-
-/**
- * _strlen - takes string and calculates length
- * @s: string taken in to find length of
- *
- * Return: i, string length
- */
-
-int _strlen(char *s)
-{
-        int i = 0;
-
-        while (s[i] != '\0')
-        {
-                i++;
-        }
-
-        return (i);
+	}
+	j--;
+	i = 0;
+	while (i < j)
+	{
+		converter = s[i];
+		s[i] = s[j];
+		s[j] = converter;
+		i++;
+	}
 }
