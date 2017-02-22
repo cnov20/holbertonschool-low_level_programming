@@ -1,9 +1,10 @@
 #include "holberton.h"
 
 /**
- * puts_half - prints second half of string followed by new line
- * @str: string taken in for second half to be printed
+ * puts_half - prints second half of string plus new line
+ * @str: string to print half of
  *
+ * Return: void
  */
 
 void puts_half(char *str)
@@ -29,6 +30,5 @@ void puts_half(char *str)
 		_putchar(str[half_length]);
 		half_length++;
 	}
-
 	_putchar('\n');
 }
