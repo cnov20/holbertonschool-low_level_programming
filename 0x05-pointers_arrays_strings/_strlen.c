@@ -1,20 +1,20 @@
 #include "holberton.h"
 
 /**
- * _strlen - takes string and calculates length
- * @s: string taken in to find length of
+ * _puts - prints string followed by new line to std out
+ * @str: string to be printed, with new line, to std out
  *
- * Return: i, string length
+ * Return: 0
  */
 
-int _strlen(char *s)
+void _puts(char *str)
 {
         int i = 0;
 
-        while (s[i] != '\0')
+        while (i < *str)
         {
-                i++;
+                _putchar(*str);
+                str++;
         }
-
-        return (i);
+        _putchar('\n');
 }
