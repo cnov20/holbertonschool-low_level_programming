@@ -11,9 +11,9 @@ void reverse_array(int *a, int n)
 {
 	int i;
 	int j = n - 1;
-	char converter;
+	int converter;
 
-	for (i = 0; i < n / 2; j--, i++)
+	for (i = 0; i < n / 2; i++, j--)
 	{
 		converter = a[i];
 		a[i] = a[j];
