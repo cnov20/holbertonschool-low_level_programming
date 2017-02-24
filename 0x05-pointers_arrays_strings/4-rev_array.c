@@ -5,7 +5,6 @@
  * @a: array to be iterated through
  * @n: number of elements in array
  *
- * Return: 0 - always - success
  */
 
 void reverse_array(int *a, int n)
