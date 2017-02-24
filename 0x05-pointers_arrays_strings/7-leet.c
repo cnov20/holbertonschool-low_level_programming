@@ -11,18 +11,18 @@ char *leet(char *ch)
 {
 	int i, j;
 
-	char *s1 = "aeotlAEOTL";
-	char *s2 = "4307143071";
+	char *ch1 = "aeotlAEOTL";
+	char *ch2 = "4307143071";
 
-	for (i = 0; s[i] != '\0'; i++)
+	for (i = 0; ch[i] != '\0'; i++)
 	{
-		for (j = 0; s1[j] != '\0'; j++)
+		for (j = 0; ch1[j] != '\0'; j++)
 		{
-			if (s[i] == s1[j])
+			if (ch[i] == ch1[j])
 			{
-				s[i] = s2[j];
+				ch[i] = ch2[j];
 			}
 		}
 	}
-	return (s);
+	return (ch);
 }
