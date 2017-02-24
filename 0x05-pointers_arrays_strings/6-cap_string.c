@@ -11,11 +11,6 @@ char *cap_string(char *ch)
 {
 	int i;
 
-	if (*ch >= 'a' && *ch <= 'z')
-	{
-		*ch -= 32;
-	}
-
 	for (i = 0; ch[i] != '\0'; i++)
 	{
 		switch (ch[i])
@@ -39,7 +34,10 @@ char *cap_string(char *ch)
 				ch[i + 1] -= 32;
 			}
 		}
-
+		if (*ch >= 'a' && *ch <= 'z')
+		{
+			*ch -= 32;
+		}
 	}
 
 	return (ch);
