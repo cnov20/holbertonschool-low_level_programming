@@ -4,7 +4,7 @@
  * *string_toupper - converts lowercase letters to uppercase
  * @char *: character array(pointer) to be iterated through
  *
- * Return: 0 - always - success
+ * Return: characters converted to uppercase
  */
 
 char *string_toupper(char *ch)
@@ -18,5 +18,5 @@ char *string_toupper(char *ch)
 			ch[i] -= 32;
 		}
 	}
-	return(ch);
+	return (ch);
 }
