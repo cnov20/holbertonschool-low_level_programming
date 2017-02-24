@@ -18,9 +18,9 @@ char *rot13(char *ch)
 			ch[i] += 13;
 
 		}
-		else
+		else if ((ch[i] >= 'n' && ch[i] <= 'z') || (ch[i] >= 'N' && ch[i] <= 'Z'))
 		{
-			*ch -= 13;
+			ch[i] -= 13;
 		}
 
 	}
