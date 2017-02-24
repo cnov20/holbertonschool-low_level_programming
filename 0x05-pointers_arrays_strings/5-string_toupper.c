@@ -2,7 +2,7 @@
 
 /**
  * *string_toupper - converts lowercase letters to uppercase
- * @char *: character array(pointer) to be iterated through
+ * @ch: character array(pointer) to be iterated through
  *
  * Return: characters converted to uppercase
  */
