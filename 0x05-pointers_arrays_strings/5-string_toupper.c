@@ -7,15 +7,16 @@
  * Return: 0 - always - success
  */
 
-char *string_toupper(char *)
+char *string_toupper(char *ch)
 {
-        int i, size;
-        size = n;
+	int i;
 
-        for (i = size - 1; i >= 0; i--)
-        {
-                a[i] = a[n - 1];
-                a--;
-        }
-
+	for (i = 0; ch[i] != '\0'; i++)
+	{
+		if (ch[i] >= 'a' && ch[i] <= 'z')
+		{
+			ch[i] -= 32;
+		}
+	}
+	return(ch);
 }
