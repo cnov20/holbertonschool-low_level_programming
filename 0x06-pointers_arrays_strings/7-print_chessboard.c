@@ -9,20 +9,20 @@
 
 void print_chessboard(char (*a)[8])
 {
-	int i;
-	int j;
+	int rows;
+	int columns;
 
-	i = 0;
-	while (i < 8)
+	rows = 0;
+	while (rows < 8)
 	{
-		j = 0;
-		while (j < 8)
+		columns = 0;
+		while (columns < 8)
 		{
-			_putchar(a[i][j]);
-			j++;
+			_putchar(a[rows][columns]);
+			columns++;
 		}
 		_putchar('\n');
-		i++;
+		rows++;
 	}
 
 }
