@@ -1,11 +1,11 @@
 #include "holberton.h"
 
 /**
- * _strlen_recursion - function that recursively returns the length of a string
+ * factorial - function that recursively returns the factorial of a number
  *
- * @s: string to be counted
+ * @n: number to find factorial of
  *
- * Return: string length
+ * Return: factorial, -1, 1, depending on value of n
  */
 
 int factorial(int n)
