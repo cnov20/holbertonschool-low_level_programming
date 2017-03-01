@@ -13,37 +13,22 @@
 char *_strstr(char *haystack, char *needle)
 {
 
-	int hay_count, needle_count, length = 0, length2 = 0;
+	int i, j, subscript_start;
 
-	while (haystack[length] != '\0')
+	for (i = 0; haystack[i] != '\0'; i++)
 	{
-		length++;
-	}
-	length--;
-	while (needle[length2] != '\0')
-	{
-		length2++;
-	}
-	length2--;
-	for (hay_count = 0; haystack[hay_count] != '\0'; hay_count++)
-	{
-		for (needle_count = 0; needle[needle_count] != '\0';
-		     needle_count++)
+		for (j = 0, subscript_start = i; needle[j] != '\0'; j++, subscript_start++)
 		{
-			if (haystack[hay_count] == needle[0])
+			if (needle[j] != haystack[i] || haystack[subscript_start] != '\0')
 			{
-				for (; haystack[hay_count] ==
-			   needle[needle_count]; hay_count++, needle_count++)
-				{
-					if (haystack[hay_count] ==
-					    needle[length2 - 1])
-					{
-						return (&(haystack[hay_count -
-								 length2 + 1]));
-					}
-				}
+				break;
 			}
 		}
+
+		if (needle[j] == '\0')
+		{
+			return (haystack + i);
+		}
 	}
-	return (NULL);
+	return (0);
 }
