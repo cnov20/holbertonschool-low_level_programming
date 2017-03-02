@@ -15,13 +15,12 @@ int is_palindrome(char *s)
 	}
 	else
 	{
-		return
-
+		return (0);
+	}
 }
 
 /**
- * _print_rev_recursion - function that recursively prints a string in reverse,
- * followed by a new line
+ * _print_rev_recursion - function that recursively prints a string in reverse
  * @s: string to be printed
  *
  * Return: none
@@ -38,7 +37,6 @@ void _print_rev_recursion(char *s)
 
 /**
  * _strlen_recursion - function that recursively returns the length of a string
- *
  * @s: string to be counted
  *
  * Return: string length
@@ -55,15 +53,4 @@ int _strlen_recursion(char *s)
 	{
 		return (1 + _strlen_recursion(s + 1));
 	}
-}
-
-int i, j, temp;
-
-if (i < j)
-{
-	temp = string[i];
-	string[i] = string[j];
-	string[j] = temp;
-	i++;
-	j--;
 }
