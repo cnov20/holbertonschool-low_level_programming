@@ -1,37 +1,28 @@
 #include "holberton.h"
 
 /**
- * is_palindrome - function that determines if a string is a palindrome or not
- * @s: string to be analyzed
- *
- * Return: integer 1 if palindrome, 0 if not
- */
-
-int is_palindrome(char *s)
-{
-	if (*s == ' ')
-	{
-		return (1);
-	}
-	else
-	{
-		return (0);
-	}
-}
-
-/**
- * _print_rev_recursion - function that recursively prints a string in reverse
+ * palindrome_help  - helper function that compares characters of string
+ * @i: starting index of string to compare to length index
+ * @len: string length, iterate through from end of string to be compared to i
  * @s: string to be printed
  *
  * Return: none
  */
 
-void _print_rev_recursion(char *s)
+int palindrome_help(int i, int len, char *s)
 {
 
-	if (*s != '\0')
+	if (i > len)
 	{
-		_print_rev_recursion(s + 1);
+		return (1);
+	}
+	else if (s[i] != s[len - 1])
+	{
+		return (0);
+	}
+	else
+	{
+		return (palindrome_help(i + 1, len - 1, s));
 	}
 }
 
@@ -52,5 +43,27 @@ int _strlen_recursion(char *s)
 	else
 	{
 		return (1 + _strlen_recursion(s + 1));
+	}
+}
+
+/**
+ * is_palindrome - function that recursively determines if string is palindrome
+ * @s: string to check
+ *
+ *
+ * Return: 1 or 0
+ */
+
+int is_palindrome(char *s)
+{
+	int len = _strlen_recursion(s);
+
+	if (*s == ' ')
+	{
+		return (1);
+	}
+	else
+	{
+		return (palindrome_help(0, len, s));
 	}
 }
