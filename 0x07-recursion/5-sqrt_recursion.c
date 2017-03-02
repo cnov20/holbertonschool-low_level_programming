@@ -3,7 +3,6 @@
 /**
  * _sqrt_recursion - function that recursively returns square root of number
  * @n: number to return square root of
- * @x: number to test against integer (n)
  * Return: natural square root or -1, depending on value of n
  */
 
