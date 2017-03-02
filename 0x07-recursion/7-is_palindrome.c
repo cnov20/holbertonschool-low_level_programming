@@ -2,9 +2,9 @@
 
 /**
  * is_palindrome - function that determines if a string is a palindrome or not
- * @s - string to be analyzed
+ * @s: string to be analyzed
  *
- * Return: 1 if palindrome, 0 if not
+ * Return: integer 1 if palindrome, 0 if not
  */
 
 int is_palindrome(char *s)
