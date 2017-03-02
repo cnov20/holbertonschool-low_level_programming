@@ -11,14 +11,7 @@
 
 int _pow_recursion(int x, int y)
 {
-
-	int NaN = NaN;
-
-	if (x < 0)
-	{
-		return (NaN);
-	}
-	else if (y < 0)
+	if (y < 0)
 	{
 		return (-1);
 	}
