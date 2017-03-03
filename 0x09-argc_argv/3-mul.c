@@ -26,8 +26,8 @@ int main(int argc, char **argv)
 			product *= atoi(argv[i]);
 		}
 
-		printf("%d\n", product);
-		return (0);
 	}
 
+	printf("%d\n", product);
+	return (0);
 }
