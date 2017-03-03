@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * main - prints name of file
+ * main - multiplies numbers passed as arguments on command line
  * @argc: argument count
  * @argv: argument vector (value at given index)
  *
@@ -25,8 +25,8 @@ int main(int argc, char **argv)
 	else
 	{
 		printf("%s\n", "Error");
-		return(1);
+		return (1);
 	}
 
-	return (0);
+	return (product);
 }
