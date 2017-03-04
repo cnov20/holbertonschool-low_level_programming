@@ -16,26 +16,36 @@ char *str_concat(char *s1, char *s2)
 	unsigned int j;
 	unsigned int len1, len2, length;
 
-
-	if (s1 == NULL || s2 == NULL)
+	if (s1 == NULL)
 	{
-		return (NULL);
+		s1 = "";
+	}
+	if (s2 == NULL)
+	{
+		s2 = "";
 	}
 
 	len1 = _strlen(s1);
 	len2 = _strlen(s2);
+	len2++;
 	length = len1 + len2;
-	s = malloc(sizeof(char) * length + 1);
 
-	for (i = 0; s1[i] != '\0'; i++)
+	s = malloc(sizeof(char) * length);
+
+	if (s == NULL)
 	{
+		return (NULL);
+	}
+
+	for (i = 0; i < len1; i++)
+       	{
 		s[i] = s1[i];
 	}
-	for (j = 0; s2[j] != '\0'; i++, j++)
-	{
-		s[i] = s2[j];
+       	for (j = 0; j < len2; j++)
+       	{
+		s[i + j] = s2[j];
 	}
-	s[i] = '\0';
+
 	return (s);
 }
 
