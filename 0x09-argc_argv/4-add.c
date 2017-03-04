@@ -14,16 +14,15 @@
 int main(int argc, char **argv)
 {
 	int i;
-	int result;
 	char *endptr;
-	unsigned int sum;
+	unsigned int sum = 0;
 	unsigned int base = 10;
 
 	if (argc)
 	{
 		for (i = 1; i < argc; i++)
 		{
-			sum = strtol(argv[i], &endptr, base);
+			strtol(argv[i], &endptr, base);
 
 			if (*endptr)
 			{
@@ -32,12 +31,12 @@ int main(int argc, char **argv)
 			}
 			else
 			{
-				result += sum;
+				sum += strtol(argv[i], &endptr, base);
 			}
 
 		}
 
-		printf("%d\n", result);
+		printf("%d\n", sum);
 
 	}
 
