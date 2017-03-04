@@ -1,6 +1,5 @@
 #include "holberton.h"
 #include <stdlib.h>
-#include <string.h>
 
 /**
  * _strdup - creates array of a given size, using malloc function
@@ -15,11 +14,11 @@ char *_strdup(char *str)
 	unsigned int i;
 	unsigned int len;
 
-	len = strlen(str + '\0');
+	len = _strlen(str + '\0');
 
 	s = (char *) malloc(len * sizeof(str));
 
-	if (str == NULL)
+	if (s == NULL)
 	{
 		free(s);
 		return (NULL);
@@ -32,4 +31,23 @@ char *_strdup(char *str)
 
 	return (s);
 	free(s);
+}
+
+/**
+ * _strlen - takes string and calculates length
+ * @s: string taken in to find length of
+ *
+ * Return: i, string length
+ */
+
+int _strlen(char *s)
+{
+	int i = 0;
+
+	while (s[i] != '\0')
+	{
+		i++;
+	}
+
+	return (i);
 }
