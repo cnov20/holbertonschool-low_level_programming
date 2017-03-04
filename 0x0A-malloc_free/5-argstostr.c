@@ -11,6 +11,44 @@
 
 char *argstostr(int ac, char **av)
 {
+
+	char *new;
+	int i;
+	unsigned int total_args;
+
+	if (ac == 0 || av == NULL)
+	{
+		return (NULL);
+	}
+
+
+	for (i = 0; i < ac; i++)
+	{
+		total_args += _strlen(av[i]) + 1;
+	}
+
+	new = malloc(total_args * sizeof(char));
+
+	if (new == NULL)
+	{
+		return (NULL);
+	}
+
+
+	return (new);
+}
+
+
+/**
+ * *str_concat - concatenates two strings
+ * @s1: first string to be concatenated
+ * @s2: second string to be concatenated
+ *
+ * Return: NULL if failing, pointer to concatenated string if successful
+ */
+
+char *str_concat(char *s1, char *s2)
+{
 	char *s;
 	unsigned int i;
 	unsigned int j;
