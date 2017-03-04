@@ -19,16 +19,7 @@ int main(int argc, char **argv)
 	unsigned int sum;
 	unsigned int base = 10;
 
-	if (argc != 1)
-	{
-		printf("%s\n", "Error");
-		return (1);
-	}
-	else if (argv[i] < 0)
-	{
-		printf("%d\n", 0);
-	}
-	else
+	if (argc)
 	{
 		for (i = 1; i < argc; i++)
 		{
