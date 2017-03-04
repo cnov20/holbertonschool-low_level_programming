@@ -20,7 +20,6 @@ char *_strdup(char *str)
 
 	if (str == NULL)
 	{
-		free(s);
 		return (NULL);
 	}
 
@@ -30,7 +29,7 @@ char *_strdup(char *str)
 	}
 
 	return (s);
-	free(s);
+
 }
 
 /**
