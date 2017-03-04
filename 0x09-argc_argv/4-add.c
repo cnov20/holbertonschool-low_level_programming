@@ -21,11 +21,11 @@ int main(int argc, char **argv)
 
 	if (argc)
 	{
-		for(i = 1; i < argc; i++)
+		for (i = 1; i < argc; i++)
 		{
 			sum = strtol(argv[i], &endptr, base);
 
-			if(*endptr)
+			if (*endptr)
 			{
 				printf("%s\n", "Error");
 				return (1);
