@@ -16,15 +16,16 @@ char *str_concat(char *s1, char *s2)
 	unsigned int j;
 	unsigned int len1, len2, length;
 
+
+	if (s1 == NULL || s2 == NULL)
+	{
+		return (NULL);
+	}
+
 	len1 = _strlen(s1);
 	len2 = _strlen(s2);
 	length = len1 + len2;
 	s = malloc(sizeof(char) * length + 1);
-
-	if (s1 == NULL || s2 == NULL || s == NULL)
-	{
-		return (NULL);
-	}
 
 	for (i = 0; i < len1; i++)
 	{
