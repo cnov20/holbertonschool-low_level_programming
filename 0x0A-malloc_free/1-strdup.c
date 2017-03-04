@@ -15,7 +15,6 @@ char *_strdup(char *str)
 	unsigned int len;
 
 	len = _strlen(str);
-
 	s = malloc(sizeof(char) * len);
 
 	if (str == '\0')
@@ -24,14 +23,14 @@ char *_strdup(char *str)
 		return (NULL);
 	}
 
-	for (i = 0; i < len; i++)
+
+	for (i = 0; i < len + 1; i++)
 	{
 		s[i] = str[i];
 	}
 
 	s[i] = '\0';
 	return (s);
-	free(s);
 }
 
 /**
