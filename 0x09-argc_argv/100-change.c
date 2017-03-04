@@ -13,8 +13,8 @@
 
 int main(int argc, char **argv)
 {
-	unsigned int num;
-	unsigned int change;
+	int num;
+	int change;
 
 	if (argc != 2)
 	{
