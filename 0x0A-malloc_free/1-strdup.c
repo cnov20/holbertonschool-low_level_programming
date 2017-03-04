@@ -3,11 +3,10 @@
 #include <string.h>
 
 /**
- * create_array - creates array of a given size, using malloc function
- * @size: size of array, in bytes
- * @c: array of characters
+ * _strdup - creates array of a given size, using malloc function
+ * @str: size of array, in bytes
  *
- * Return: NULL
+ * Return: NULL if failing, pointer to string if successful
  */
 
 char *_strdup(char *str)
@@ -16,7 +15,7 @@ char *_strdup(char *str)
 	unsigned int i;
 	unsigned int len;
 
-	len = strlen(str);
+	len = strlen(str + '\0');
 
 	s = (char *) malloc(len * sizeof(str));
 
@@ -31,4 +30,5 @@ char *_strdup(char *str)
 	}
 
 	return (s);
+	free(s);
 }
