@@ -13,16 +13,8 @@
 
 int main(int argc, char **argv)
 {
-	unsigned int penny, two_cent_piece, nickel, dime, quarter;
-	unsigned int change;
 	unsigned int num;
-	unsigned int sum;
-
-	penny = 1;
-	two_cent_piece = 2;
-	nickel = 5;
-	dime = 10;
-	quarter = 25;
+	unsigned int change;
 
 	if (argc != 2)
 	{
@@ -32,38 +24,32 @@ int main(int argc, char **argv)
 
 	num = atoi(argv[1]);
 
-	if (num >= 25)
-       	{
-		change = num / quarter;
-		num %= quarter;
-		sum = change + num;
-	}
-       	else if (num >= 10 && num <= 24)
+	change = 0;
+	while (num > 0)
 	{
-		change = num / dime;
-		num %= dime;
-		sum = change + num;
-	}
-       	else if (num >= 5 && num <= 9)
-	{
-		change = num / nickel;
-		num %= nickel;
-		sum = change + num;
-	}
-	else if (num >= 2 && num <=4)
-	{
-		change = num / two_cent_piece;
-		num %= two_cent_piece;
-		sum = change + num;
-	}
-	else
-	{
-		change = num / penny;
-		num %= penny;
-		sum = change + num;
+		if (num >= 25)
+		{
+			num -= 25;
+		}
+		else if (num >= 10)
+		{
+			num -= 10;
+		}
+		else if (num >= 5)
+		{
+			num -= 5;
+		}
+		else if (num >= 2)
+		{
+			num -= 2;
+		}
+		else
+		{
+			num -= 1;
+		}
+		change++;
 	}
 
-
-	printf("%d\n", sum);
+	printf("%d\n", change);
 	return (0);
 }
