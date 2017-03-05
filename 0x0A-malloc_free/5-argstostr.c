@@ -11,7 +11,6 @@
 
 char *argstostr(int ac, char **av)
 {
-
 	char *new;
 	int i, j, k;
 	unsigned int total_args = 0;
@@ -34,8 +33,7 @@ char *argstostr(int ac, char **av)
 		return (NULL);
 	}
 
-	i = 0;
-	k = 0;
+	i = 0;	k = 0;
 	while (i < ac)
 	{
 		j = 0;
@@ -53,8 +51,6 @@ char *argstostr(int ac, char **av)
 
 	return (new);
 }
-
-
 
 /**
  * _strlen - takes string and calculates length
