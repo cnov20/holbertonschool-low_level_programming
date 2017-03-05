@@ -7,6 +7,7 @@
  * *string_nconcat - concatenates two strings
  * @s1: first string to be concatenated
  * @s2: second string to be concatenated
+ * @n: size of string
  *
  * Return: NULL if failing, pointer to concatenated string if successful
  */
@@ -49,6 +50,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		s[i] = s2[j];
 	}
 
+	s[i] = '\0';
 	return (s);
 }
 
