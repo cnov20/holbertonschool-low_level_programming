@@ -1,5 +1,6 @@
 #ifndef HOLBERTON_H
 #define HOlBERTON_H
+#include "holberton.h"
 #include <stdlib.h>
 
 /**
@@ -9,7 +10,7 @@
  * Return: pointer to allocated memory
  */
 
-void malloc_checked(unsigned int b)
+void *malloc_checked(unsigned int b)
 {
 
 	void *ptr;
@@ -18,8 +19,11 @@ void malloc_checked(unsigned int b)
 
 	if (ptr == NULL)
 	{
+		free(ptr);
 		exit(98);
 	}
+
+	return (ptr);
 }
 
 #endif /* HOLBERTON_H */
