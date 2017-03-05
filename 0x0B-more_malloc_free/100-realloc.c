@@ -1,5 +1,6 @@
 #include "holberton.h"
 #include <stdlib.h>
+#include <string.h>
 
 /**
  * _realloc - reallocates a memory block, using malloc and free
@@ -14,7 +15,6 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
 
 	ptr = malloc(old_size);
-	void *ptr_new;
 
 	if (new_size == 0)
 	{
@@ -22,10 +22,23 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 		return (NULL);
 
 	}
-
-	if (new_size > old_size)
+	else if (!ptr)
 	{
-		ptr_new = malloc(new_size);
+		return malloc(new_size);
+	}
+	else if (new_size <= old_size)
+	{
+		return (ptr);
+	}
+	else if (new_size > old_size)
+	{
+		void *ptr_new = malloc(new_size);
+
+		if (ptr_new)
+		{
+			memcpy(ptr_new, ptr, old_size);
+		}
+
 	}
 
 	if (new_size == old_size)
@@ -45,5 +58,5 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 		return (NULL);
 	}
 
-	return (ptr_new);
+	return (ptr);
 }
