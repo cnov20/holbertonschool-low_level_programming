@@ -14,7 +14,7 @@ int main(int argc, char **argv)
 	int i;
 	int product = 1;
 
-	if (argc != 2)
+	if (argc <= 2)
 	{
 		printf("%s\n", "Error");
 		exit(98);
