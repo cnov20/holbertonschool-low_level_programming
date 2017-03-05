@@ -27,14 +27,14 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		s2 = "";
 	}
 
-	len1 = _strlen(s1);
-	len2 = _strlen(s2);
-
 	if (n < len2)
 	{
 		len2 = n;
 	}
 
+	len1 = _strlen(s1);
+	len2 = _strlen(s2);
+	s++;
 	length = len1 + len2;
 	s = malloc(sizeof(n) * length);
 
