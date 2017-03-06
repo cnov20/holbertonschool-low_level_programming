@@ -11,8 +11,21 @@
 
 int main(void)
 {
-
-
+	if (argc != 4)
+	{
+		printf("Error/n");
+		exit (98);
+	}
+	if (argv[4] == 0 && (s = '/' || s = '%'))
+	{
+		printf("Error/n");
+		exit (99);
+	}
+	if (s != '+' || s != '-' || s != '*' || s != '/' || s != '%')
+        {
+                printf("Error/n");
+		exit (100);
+        }
 
 
 	return (0);
