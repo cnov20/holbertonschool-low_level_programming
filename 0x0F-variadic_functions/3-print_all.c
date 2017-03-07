@@ -17,6 +17,7 @@ void print_all(const char * const format, ...)
 	char c;
 	int i;
 	float f;
+	char *separator = ", ";
 
 	/*initializing all_args  so that it will store values passed in*/
 	va_start(all_args, format);
@@ -28,22 +29,23 @@ void print_all(const char * const format, ...)
 		{
 		case 's':
 			s = va_arg(all_args, char *);
-			printf("%s", s);
+			printf("%s%s", s, separator);
 			break;
 		case 'i':
 			i = va_arg(all_args, int);
-			printf("%d", i);
+			printf("%d%s", i, separator);
 			break;
 		case 'f':
 			f = va_arg(all_args, double);
-			printf("%f", f);
+			printf("%f%s", f, separator);
 			break;
 		case 'c':
 			c = va_arg(all_args, int);
-			putchar(c);
+			printf("%c%s", c, separator);
 			break;
 		}
 	}
+
 	va_end(all_args);
 	printf("\n");
 }
