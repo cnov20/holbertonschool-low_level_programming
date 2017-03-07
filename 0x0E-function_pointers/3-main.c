@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 
 	total = (*get_op_func(argv[2]))(atoi(argv[1]), atoi(argv[3]));
 
-	printf("%d/n", total);
+	printf("%d\n", total);
 
 	return (0);
 }
