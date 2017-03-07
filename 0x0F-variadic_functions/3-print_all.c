@@ -9,14 +9,14 @@
 
 void print_all(const char * const format, ...)
 {
-	va_list all_args; const char *p; char *s;
-	char * separator = ", "; unsigned int flag = 0;
+	va_list all_args; char *s; unsigned int i = 0;
+	char *separator = ", "; unsigned int flag;
 
-	va_start(all_args, format); p = format;
-	while (format != NULL && *p != '\0')
+	va_start(all_args, format);
+	while (format != NULL && format[i] != '\0')
 	{
 		flag = 1;
-		switch (*p)
+		switch (format[i])
 		{
 		case 'c':
 			printf("%c", va_arg(all_args, int));
@@ -38,11 +38,11 @@ void print_all(const char * const format, ...)
 		default:
 			flag = 0;
 			break;
-	       }
+		}
 
-		if (flag == 1 && (p + 1) != '\0')
+		if (flag == 1 && format[i + 1] != '\0')
 			printf("%s", separator);
-		p++;
+		i++;
 	}
 	va_end(all_args);
 	printf("\n");
