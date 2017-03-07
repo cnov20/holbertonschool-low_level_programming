@@ -22,7 +22,7 @@ void print_all(const char * const format, ...)
 	va_start(all_args, format);
 
 	p = format;
-	while (*p != '\0')
+	while (*p)
 	{
 		switch (*p++)
 		{
