@@ -4,29 +4,33 @@
 
 /**
  * main - prints the results of calculation functions found in other files
- *
+ * @argc: argument count
+ * @argv: argument vector (value)
  *
  * Return: 0 - success
  */
 
-int main(void)
+int main(int argc, char **argv[])
 {
+	int num1, num2, total;
+
 	if (argc != 4)
 	{
 		printf("Error/n");
-		exit (98);
+		exit(98);
 	}
-	if (argv[4] == 0 && (s = '/' || s = '%'))
+	if (argv[3] == 0 && (argv[2] == "/" || argv[2] == "%"))
 	{
 		printf("Error/n");
-		exit (99);
+		exit(100);
 	}
-	if (s != '+' || s != '-' || s != '*' || s != '/' || s != '%')
-        {
-                printf("Error/n");
-		exit (100);
-        }
 
+	num1 = atoi(argv[1]);
+	num2 = atoi(argv[3]);
+
+	total = (*get_op_func(argv[2]))(num1, num2);
+
+	printf("%d/n", total);
 
 	return (0);
 }
