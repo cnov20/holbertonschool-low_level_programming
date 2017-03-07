@@ -9,7 +9,6 @@
 
 void print_all(const char * const format, ...)
 {
-	/* declaring variable of nums passed to function, with variable type*/
 	va_list all_args;
 	const char *p;
 	char *s;
@@ -18,10 +17,15 @@ void print_all(const char * const format, ...)
 	float f;
 	char *separator = ", ";
 
-	/*initializing all_args  so that it will store values passed in*/
+	while(format == NULL)
+	{
+		return;
+	}
+
 	va_start(all_args, format);
 
 	p = format;
+
 	while (*p)
 	{
 		switch (*p++)
@@ -46,8 +50,9 @@ void print_all(const char * const format, ...)
 			c = va_arg(all_args, int);
 			printf("%c", c);
 			break;
+		default:
+			break;
 		}
-
 		if ((*p == 'c' || *p == 'i' || *p == 'f' ||
 		     *p == 's') && (p + 1) != '\0')
 			printf("%s", separator);
