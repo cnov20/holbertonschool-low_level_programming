@@ -9,27 +9,24 @@
 
 void print_all(const char * const format, ...)
 {
-	va_list all_args;
-	const char *p;
-	char *s;
-	char c;
-	int i;
-	float f;
-	char *separator = ", ";
+	va_list all_args; const char *p; char *s;
+	char * separator = ", "; unsigned int flag = 0;
 
-	while(format == NULL)
+	va_start(all_args, format); p = format;
+	while (format != NULL && *p != '\0')
 	{
-		return;
-	}
-
-	va_start(all_args, format);
-
-	p = format;
-
-	while (*p)
-	{
-		switch (*p++)
+		flag = 1;
+		switch (*p)
 		{
+		case 'c':
+			printf("%c", va_arg(all_args, int));
+			break;
+		case 'i':
+			printf("%d", va_arg(all_args, int));
+			break;
+		case 'f':
+			printf("%f", va_arg(all_args, double));
+			break;
 		case 's':
 			s = va_arg(all_args, char *);
 			if (s == NULL)
@@ -38,24 +35,14 @@ void print_all(const char * const format, ...)
 			}
 			printf("%s", s);
 			break;
-		case 'i':
-			i = va_arg(all_args, int);
-			printf("%d", i);
-			break;
-		case 'f':
-			f = va_arg(all_args, double);
-			printf("%f", f);
-			break;
-		case 'c':
-			c = va_arg(all_args, int);
-			printf("%c", c);
-			break;
 		default:
+			flag = 0;
 			break;
-		}
-		if ((*p == 'c' || *p == 'i' || *p == 'f' ||
-		     *p == 's') && (p + 1) != '\0')
+	       }
+
+		if (flag == 1 && (p + 1) != '\0')
 			printf("%s", separator);
+		p++;
 	}
 	va_end(all_args);
 	printf("\n");
