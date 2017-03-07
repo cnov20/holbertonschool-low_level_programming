@@ -10,15 +10,43 @@
 
 void print_strings(const char *separator, const unsigned int n, ...)
 {
-	if (separator != NULL)
+
+	/* declaring variable of nums passed to function, with variable type*/
+	va_list strings_given;
+
+	char *string;
+	unsigned int i;
+
+	/*initializing nums_given so that it will store all values after n*/
+	va_start(strings_given, n);
+
+	/*Loop through number of arguments passed to function via command line
+	 * and add them to sum variable - return sum
+	 */
+	for (i = 0; i < n; i++)
 	{
-		printf("");
+		string = va_arg(strings_given, char*);
+
+		if (separator == NULL && i == n - 1)
+		{
+			printf("%s", "(nil)");
+		}
+		else if (string == NULL)
+		{
+			printf("%s%s", "(nil)", separator);
+		}
+	        else if (separator == NULL || i == n - 1)
+		{
+			printf("%s", string);
+		}
+
+		else
+		{
+			printf("%s%s", string, separator);
+		}
 	}
 
-	if (n == NULL)
-	{
-		printf("(nil)");
-	}
+	va_end(strings_given);
 
 	printf("\n");
 
