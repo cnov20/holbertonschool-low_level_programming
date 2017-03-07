@@ -11,7 +11,6 @@ void print_all(const char * const format, ...)
 {
 	/* declaring variable of nums passed to function, with variable type*/
 	va_list all_args;
-
 	const char *p;
 	char *s;
 	char c;
@@ -29,11 +28,9 @@ void print_all(const char * const format, ...)
 		{
 		case 's':
 			s = va_arg(all_args, char *);
-
 			if (s == NULL)
-			{
 				printf("%s", "(nil)");
-			}
+
 			printf("%s%s", s, separator);
 			break;
 		case 'i':
@@ -49,12 +46,7 @@ void print_all(const char * const format, ...)
 			printf("%c%s", c, separator);
 			break;
 		}
-
-
-
-
 	}
-
 	va_end(all_args);
 	printf("\n");
 }
