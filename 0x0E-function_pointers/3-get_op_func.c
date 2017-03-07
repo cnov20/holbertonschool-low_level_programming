@@ -33,6 +33,6 @@ int (*get_op_func(char *s))(int, int)
 		i++;
 	}
 
-	printf("Error");
+	printf("Error\n");
 	exit(99);
 }
