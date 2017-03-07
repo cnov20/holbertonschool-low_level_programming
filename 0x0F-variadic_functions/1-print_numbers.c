@@ -1,5 +1,4 @@
 #include "variadic_functions.h"
-
 /**
  * print_numbers - function that prints numbers, followed by a new line
  * @separator: string that seprates given numbers
@@ -7,7 +6,6 @@
  *
  * Return: none - void
  */
-
 void print_numbers(const char *separator, const unsigned int n, ...)
 {
 	/* declaring variable of nums passed to function, with variable type*/
@@ -37,6 +35,4 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	va_end(nums_given);
 
 	printf("\n");
-
-
 }

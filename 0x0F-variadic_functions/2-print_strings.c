@@ -1,5 +1,4 @@
 #include "variadic_functions.h"
-
 /**
  * print_strings - function that prints strings, followed by a new line
  * @n: count of parameters (strings) given
@@ -7,13 +6,11 @@
  *
  * Return: none - void
  */
-
 void print_strings(const char *separator, const unsigned int n, ...)
 {
 
 	/* declaring variable of nums passed to function, with variable type*/
 	va_list strings_given;
-
 	char *string;
 	unsigned int i;
 
@@ -27,7 +24,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	{
 		string = va_arg(strings_given, char*);
 
-		if (separator == NULL && i == n - 1)
+		if (string == NULL && i == n - 1)
 		{
 			printf("%s", "(nil)");
 		}
