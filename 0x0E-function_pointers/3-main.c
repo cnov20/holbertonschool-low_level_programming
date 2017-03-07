@@ -25,10 +25,7 @@ int main(int argc, char **argv[])
 		exit(100);
 	}
 
-	num1 = atoi(argv[1]);
-	num2 = atoi(argv[3]);
-
-	total = (*get_op_func(argv[2]))(num1, num2);
+	total = (*get_op_func(argv[2]))(atoi(argv[1]), atoi(argv[3]));
 
 	printf("%d/n", total);
 
