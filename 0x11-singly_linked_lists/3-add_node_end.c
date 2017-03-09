@@ -12,6 +12,9 @@ list_t *add_node_end(list_t **head, const char *str)
 	list_t *new_end = malloc(sizeof(struct list_s));
 	list_t *previous_end = *head;
 
+	if (new_end == NULL)
+		return (NULL);
+
 	new_end->str = strdup(str);
 	new_end->len = _strlen(str);
 
