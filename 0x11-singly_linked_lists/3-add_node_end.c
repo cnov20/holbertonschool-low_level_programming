@@ -29,7 +29,7 @@ list_t *add_node_end(list_t **head, const char *str)
 
 	previous_end->next = new_end;
 
-	return (&*new_end);
+	return (new_end);
 }
 
 /**
