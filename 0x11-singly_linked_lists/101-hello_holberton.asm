@@ -1,21 +1,22 @@
-fmt:	 db "eax=%s, ebx=%s", 10, 0 ; The printf format, "\n", '0'
+;Declare needed C  functions
+        extern	printf			; the C function, to be called
 
-	extern printf		;calls printf
+	section .data			; Data section, initialized variables
+msg:	db "Hello, Holberton", 0 	; C string needs 0 for return value
+fmt:	db "%s", 10, 0          	; The printf format, "\n",'0'
 
+        section .text			; Code section.
 
-section	.data
-	msg db 'Hello, Holberton', 0xa ;string to be printed
-	len equ $ - msg		    ;length of the string
+        global main			; the standard gcc entry point
+main:					; the program entry point
+	        push    rbp		; set up stack frame, must be alligned
 
-section	.text
-	global main		;must be declared for linker (ld)
+	mov	rdi,fmt
+	mov	rsi,msg
+	mov	rax,0			;
+	call    printf			; Call C function to print output
 
-main:			        ;tells linker entry point
-	    mov	edx,len     	;message length
-	    mov	ecx,msg     	;message to write
-	    mov	ebx,1       	;file descriptor (stdout)
-	    mov	eax,4       	;system call number (sys_write)
-	    int	0x80        	;call kernel
+	pop	rbp			; restore stack
 
-	    mov	eax,1       	;system call number (sys_exit)
-	    int	0x80        	;call kernel
+	mov	rax,0			; normal, no error, return value
+	ret				; return
