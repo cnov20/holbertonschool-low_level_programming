@@ -1,4 +1,10 @@
 #include "lists.h"
+/**
+ * premain - function that prints before main function
+ *
+ * Return: none - void
+ */
+
 
 void __attribute__ ((constructor)) premain()
 {
