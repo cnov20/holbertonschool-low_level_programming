@@ -4,7 +4,7 @@
  * @head: pointer to head of linked list
  * @str: string to be duplicated and added to new node
  *
- * Return: number of nodes in linked list
+ * Return: address of new end node
  */
 
 list_t *add_node_end(list_t **head, const char *str)
@@ -17,13 +17,12 @@ list_t *add_node_end(list_t **head, const char *str)
 
 	new_end->str = strdup(str);
 	new_end->len = _strlen(str);
-
 	new_end->next = NULL;
 
 	if (*head == NULL)
 	{
 		*head = new_end;
-		return (NULL);
+		return (new_end);
 	}
 	while (previous_end->next != NULL)
 	{
