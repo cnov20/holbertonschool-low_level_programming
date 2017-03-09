@@ -1,6 +1,14 @@
+fmt:	 db "eax=%s, ebx=%s", 10, 0 ; The printf format, "\n", '0'
+
+	extern printf		;calls printf
+
+
+section	.data
+	msg db 'Hello, Holberton', 0xa ;string to be printed
+	len equ $ - msg		    ;length of the string
+
 section	.text
 	global main		;must be declared for linker (ld)
-	extern printf		;calls printf
 
 main:			        ;tells linker entry point
 	    mov	edx,len     	;message length
@@ -11,7 +19,3 @@ main:			        ;tells linker entry point
 
 	    mov	eax,1       	;system call number (sys_exit)
 	    int	0x80        	;call kernel
-
-section	.data
-	msg db 'Hello, Holberton', 0xa ;string to be printed
-	len equ $ - msg		    ;length of the string
