@@ -6,7 +6,7 @@
  *
  * Return: (1) on SUCCESS - (-1) on FAILURE
  */
-int delete_nodeint_at_index(listint_t **head, unsigned int idx)
+int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
 
 	listint_t *deleted_node;
@@ -16,19 +16,19 @@ int delete_nodeint_at_index(listint_t **head, unsigned int idx)
 	deleted_node = *head;
 
 	i = 0;
-	current_node = deleted_node->next;
-	while (current_node != NULL)
+	while (deleted_node != NULL)
 	{
-		if (i == idx)
+		if (i  == index)
 		{
 			deleted_node = deleted_node->next;
+			current_node = deleted_node->next;
 			deleted_node->next = current_node->next;
+			free(current_node);
 			return (1);
 		}
 
 		i++;
 	}
 
-	free(current_node);
 	return (-1);
 }
