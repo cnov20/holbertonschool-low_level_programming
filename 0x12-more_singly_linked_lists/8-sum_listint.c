@@ -1,6 +1,6 @@
 #include "lists.h"
 /**
- * sum_listint_t - returns sum of all the data (n) of a listint_t linked list
+ * sum_listint - returns sum of all the data (n) of a listint_t linked list
  * @head: pointer to pointer to head of linked list
  *
  * Return: nth node of linked list or NULL if does not exist
