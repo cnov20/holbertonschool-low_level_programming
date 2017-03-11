@@ -12,11 +12,7 @@ int get_endianness(void)
 
 	if (*c)
 	{
-		printf("Little Endian\n");
-	}
-	else
-	{
-		printf("Big Endian\n");
+		return (1);
 	}
 
 	return (0);
