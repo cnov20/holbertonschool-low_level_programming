@@ -1,7 +1,7 @@
 #include "holberton.h"
 /**
- * binary_to_uint - coverts a binary number to an unsigned integer
- * @b: pointer to string of 0 and 1 characters
+ * print_binary - coverts an integert to binary and prints it
+ * @n: integer to be converted to binary and printe to std out
  *
  * Return: binary number converted to unsigned int
  */
@@ -13,10 +13,10 @@ void print_binary(unsigned long int n)
 
 	itob = n;
 
-       	if (itob == 0)
-       	{
-       		_putchar('0');
-       	}
+	if (itob == 0)
+	{
+		_putchar('0');
+	}
 	while (itob > 0)
 	{
 		if ((itob & n) == 0)
@@ -28,7 +28,7 @@ void print_binary(unsigned long int n)
 			_putchar('1');
 		}
 
-	       	itob >>= 1;
+		itob >>= 1;
 		i--;
-       	}
+	}
 }
