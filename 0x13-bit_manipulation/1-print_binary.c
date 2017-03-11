@@ -16,17 +16,16 @@ void print_binary(unsigned long int n)
 		return;
 	}
 
-	for(i = sizeof(n) * 8 - 1; i >= 0; i--)
+	for (i = sizeof(n) * 8 - 1; i >= 0; i--)
 	{
-	       	if ((n >> i) & 1)
-	       	{
-	       		_putchar('1');
+		if ((n >> i) & 1)
+		{
+			_putchar('1');
 			flag = true;
-	       	}
-	       	else if (flag == true)
-	       	{
-	       		_putchar('0');
-	       	}
-
+		}
+		else if (flag == true)
+		{
+			_putchar('0');
+		}
 	}
 }
