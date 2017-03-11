@@ -13,6 +13,9 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 	listint_t *current_node;
 	unsigned int i;
 
+	if (*head == NULL)
+		return (-1);
+
 	deleted_node = *head;
 
 	if (index == 0)
@@ -22,12 +25,11 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 		return (1);
 	}
 
-	i = 1;
-	while (i < index - 1)
+	i = 0;
+	while (i < index)
 	{
 
 		deleted_node = deleted_node->next;
-		return (-1);
 		i++;
 	}
 
