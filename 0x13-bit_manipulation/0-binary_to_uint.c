@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
- * int_binary_to_uint - coverts a binary number to an unsigned integer
+ * binary_to_uint - coverts a binary number to an unsigned integer
  * @b: pointer to string of 0 and 1 characters
  *
  * Return: binary number converted to unsigned int
@@ -27,7 +27,7 @@ unsigned int binary_to_uint(const char *b)
 			return (0);
 		}
 
-		if(b[i] == '1')
+		if (b[i] == '1')
 		{
 			btoi += 1;
 		}
