@@ -13,12 +13,13 @@ int create_file(const char *filename, char *text_content)
 
 	int fd_open, fd_write, fd_close;
 	int length;
+	mode_t file_permissions = S_IRUSR | S_IWUSR;
 
 	if (filename == NULL)
 		return (-1);
 
 	/* open */
-	fd_open = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0600);
+	fd_open = open(filename, O_CREAT | O_RDWR | O_TRUNC, file_permissions);
 
 	if (fd_open == -1)
 		return (-1);
