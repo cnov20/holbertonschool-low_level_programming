@@ -18,28 +18,24 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (filename == NULL)
 		return (0);
 
-	/* malloc space for file to be read and printed to std out */
-
+	/* allocate space for file to be read and printed to std out*/
 	buffer = malloc(sizeof(ch) * letters);
 
 	/* open */
-
 	fd_open = open(filename, O_RDONLY);
 
 	/* read */
-
 	fd_read = read(fd_open, buffer, letters);
 
 	/* write */
-
 	fd_write = write(STDOUT_FILENO, buffer, fd_read);
 
 	if (fd_write == -1)
 		return (0);
 
 	/* close */
-
 	fd_close = close(fd_open);
+
 	if (fd_close == -1)
 		return (0);
 
