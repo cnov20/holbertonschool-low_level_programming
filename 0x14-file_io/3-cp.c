@@ -19,7 +19,6 @@ int main(int ac, char **av)
 	if (filename == NULL)
 		return (-1);
 
-
 	if (fd_to != NULL)
 	{
 		/* open */
@@ -68,6 +67,12 @@ void usage_failure(void)
 	}
 }
 
+/**
+ * read_failure - prints to standard error if file can't be read
+ *
+ * Return: nothing - void
+ */
+
 void read_failure(void)
 {
 	if (fd_from == -1)
@@ -78,6 +83,12 @@ void read_failure(void)
 
 }
 
+/**
+ * write_failure - prints to standard error if file can't be written
+ *
+ * Return: nothing - void
+ */
+
 void write_failure(void)
 {
 	if (fd_to == -1)
@@ -87,9 +98,15 @@ void write_failure(void)
 	}
 }
 
+/**
+ * close_failure - prints to standard error if file can't be closed
+ *
+ * Return: nothing - void
+ */
+
 void close_failure(void)
 {
-	if(fd_close == -1)
+	if (fd_close == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %s\n", fd_close);
 		exit(100);
