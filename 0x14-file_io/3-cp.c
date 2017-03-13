@@ -16,9 +16,6 @@ int main(int ac, char **av)
 	mode_t mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
 	char *buffer;
 
-	if (filename == NULL)
-		return (-1);
-
 	if (ac != 3)
 		usage_failure();
 
