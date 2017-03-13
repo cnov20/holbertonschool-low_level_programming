@@ -24,7 +24,6 @@ int main(int ac, char **av)
 	buffer = malloc(sizeof(ch) * BUFF_SIZE);
 	/* open file read from (actual file to be copied)*/
 	fd_from = open(av[1], O_RDONLY);
-
 	if (fd_from == -1)
 		read_failure(av[1]);
 	/* open file to be written to (the actual copy)*/
@@ -33,6 +32,8 @@ int main(int ac, char **av)
 		write_failure(av[2]);
 	/* read from source file, copy into buffer */
 	read_value = read(fd_from, buffer, BUFF_SIZE);
+	if (read_value == -1)
+		read_failure(av[1]);
 	/* write to target file, from buffer - while true (greater than 0)*/
 	while (read_value)
 	{
