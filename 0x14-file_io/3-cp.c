@@ -35,7 +35,6 @@ int main(int ac, char **av)
 	read_value = read(fd_from, buffer, BUFF_SIZE);
 	if (read_value == -1)
 		read_failure(av[1]);
-
 	/* write to target file, from buffer - while true (greater than 0)*/
 	while (read_value)
 	{
