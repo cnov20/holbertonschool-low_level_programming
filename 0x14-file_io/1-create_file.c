@@ -11,7 +11,7 @@
 int create_file(const char *filename, char *text_content)
 {
 
-	int fd_open, fd_write, fd_create, fd_close;
+	int fd_open, fd_write, fd_close;
 	char *buffer;
 
 	if (filename == NULL)
@@ -19,7 +19,6 @@ int create_file(const char *filename, char *text_content)
 
 	if (text_content == NULL)
 	{
-		fd_create = *text_content;
 		return (1);
 	}
 
@@ -33,19 +32,13 @@ int create_file(const char *filename, char *text_content)
 	fd_write = write(STDOUT_FILENO, buffer, *text_content);
 
 	if (fd_write == -1)
-		return (0);
-
-	/* create */
-	fd_create = creat(filename, O_RDWR);
-
-	if (fd_create == -1)
 		return (-1);
 
 	/* close */
 	fd_close = close(fd_open);
 
 	if (fd_close == -1)
-		return (0);
+		return (-1);
 
 	return (1);
 }
