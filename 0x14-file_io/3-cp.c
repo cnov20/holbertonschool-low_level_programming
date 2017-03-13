@@ -19,14 +19,16 @@ int main(int ac, char **av)
 	if (filename == NULL)
 		return (-1);
 
-	if (fd_to != NULL)
-	{
-		/* open */
-		fd_from = open(filename, O_CREAT | O_RDWR | O_TRUNC, mode);
-	}
+	/* allocate space for file to be read and printed to std out*/
+	buffer = malloc(sizeof(char) * BUFF_SIZE);
+
+	/* open */
+       	fd_from = open(av[1], O_RDONLY);
 
 	if (fd_from == -1)
 		return (-1);
+
+	fd_to = open(av[2], O_CREAT | O_RDWR | O_TRUNC, mode, mode);
 
 	/* write */
 	if (text_content != NULL)
