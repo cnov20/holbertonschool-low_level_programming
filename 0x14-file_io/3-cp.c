@@ -10,7 +10,7 @@
 
 int main(int ac, char **av)
 {
-	unsigned int fd_from, fd_to, fd_close, read_value, write_value;
+	int fd_from, fd_to, fd_from_close, fd_to_close, read_value, write_value;
 	mode_t mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
 	char ch, *buffer;
 
@@ -44,10 +44,12 @@ int main(int ac, char **av)
 	if (read_value == -1)
 		read_failure(av[1]);
 
+	/* write to target file, from buffer - while true (greater than 0)*/
 	while (read_value)
 	{
-
-
+		write_value = write(fd_to, buffer, read_value);
+		if (write_value == -1)
+			write_failure(av[2]);
 
 	}
 
@@ -89,7 +91,7 @@ void read_failure(char *fd)
 {
 	if (fd_from == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", fd);
 		exit(98);
 	}
 
@@ -106,7 +108,7 @@ void write_failure(char *fd)
 {
 	if (fd_to == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", fd);
 		exit(99);
 	}
 }
@@ -122,7 +124,7 @@ void close_failure(int fd)
 {
 	if (fd_close == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %s\n", fd_close);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %s\n", fd);
 		exit(100);
 	}
 }
