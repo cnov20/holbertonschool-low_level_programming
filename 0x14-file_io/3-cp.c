@@ -10,37 +10,29 @@
 
 int main(int ac, char **av)
 {
-	int fd_from, fd_to, fd_from_close, fd_to_close, read_value, write_value;
+	int fd_from, fd_to, read_value, write_value;
 	mode_t mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
 	char ch, *buffer;
 
 	if (ac != 3)
 		usage_failure();
-
 	if (av[1] == NULL)
 		read_failure(av[1]);
-
 	if (av[2] == NULL)
 		write_failure(av[2]);
-
 	/* allocate space for file to be read and printed to std out*/
 	buffer = malloc(sizeof(ch) * BUFF_SIZE);
-
 	/* open file read from (actual file to be copied)*/
 	fd_from = open(av[1], O_RDONLY);
 
 	if (fd_from == -1)
 		read_failure(av[1]);
-
 	/* open file to be written to (the actual copy)*/
 	fd_to = open(av[2], O_CREAT | O_RDWR | O_TRUNC, mode);
-
 	if (fd_to == -1)
 		write_failure(av[2]);
-
 	/* read from source file, copy into buffer */
 	read_value = read(fd_from, buffer, BUFF_SIZE);
-
 	if (read_value == -1)
 		read_failure(av[1]);
 
@@ -50,16 +42,11 @@ int main(int ac, char **av)
 		write_value = write(fd_to, buffer, read_value);
 		if (write_value == -1)
 			write_failure(av[2]);
-
 	}
-
 	/* close source file and target file*/
-	fd_from_close = close(fd_from);
-	fd_to_close = close(fd_to);
-
-	if (fd_from_close == -1)
+	if (close(fd_from) == -1)
 		close_failure(fd_from);
-	if (fd_to_close == -1)
+	if (close(fd_to) == -1)
 		close_failure(fd_to);
 
 	return (0);
