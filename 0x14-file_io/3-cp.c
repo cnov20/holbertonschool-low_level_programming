@@ -32,20 +32,14 @@ int main(int ac, char **av)
        	fd_from = open(av[1], O_RDONLY);
 
 	if (fd_from == -1)
+		read_failure(av[1]);
 
 	/* write */
 	fd_to = open(av[2], O_CREAT | O_RDWR | O_TRUNC, mode);
 
-	if (fd_from != NULL)
-	{
-		length = 0;
-		while ([length] != '\0')
-		{
-			length++;
-		}
+	if (fd_to == -1)
+		write_failure(av[2]);
 
-		fd_write = write(fd_to, buffer, length);
-	}
 
 	if (fd_write == -1)
 		return (-1);
