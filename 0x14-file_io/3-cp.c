@@ -33,11 +33,12 @@ int main(int ac, char **av)
 		write_failure(av[2]);
 	/* read from source file, copy into buffer */
 	read_value = read(fd_from, buffer, BUFF_SIZE);
-	if (read_value == -1)
-		read_failure(av[1]);
+
 	/* write to target file, from buffer - while true (greater than 0)*/
 	while (read_value)
 	{
+		if (read_value == -1)
+			read_failure(av[1]);
 		write_value = write(fd_to, buffer, read_value);
 		if (write_value == -1)
 			write_failure(av[2]);
@@ -48,7 +49,6 @@ int main(int ac, char **av)
 		close_failure(fd_from);
 	if (close(fd_to) == -1)
 		close_failure(fd_to);
-
 	return (0);
 }
 
