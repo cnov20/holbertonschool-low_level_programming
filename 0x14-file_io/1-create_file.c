@@ -13,19 +13,20 @@ int create_file(const char *filename, char *text_content)
 
 	int fd_open, fd_write, fd_close;
 	int length;
-/*	mode_t file_permissions = S_IRUSR || S_IWUSR; */
 
 	if (filename == NULL)
 		return (-1);
 
-	fd_open = fd_write = fd_close = length = 0;
-
 	/* open */
 	fd_open = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0600);
 
+	if (fd_open == -1)
+		return (-1);
+
 	/* write */
-	if (!text_content)
+	if (text_content != NULL)
 	{
+		length = 0;
 		while (text_content[length] != '\0')
 		{
 			length++;
