@@ -56,7 +56,7 @@ int main(int ac, char **av)
 	if (fd_close == -1)
 		return (-1);
 
-	return (1);
+	return (0);
 }
 
 /**
