@@ -20,7 +20,10 @@ int main(int ac, char **av)
 		usage_failure();
 
 	if(av[1] == NULL)
-		read_failure(
+		read_failure(av[1]);
+
+	if(av[2] == NULL)
+		write_failure(av[2]);
 
 	/* allocate space for file to be read and printed to std out*/
 	buffer = malloc(sizeof(char) * BUFF_SIZE);
