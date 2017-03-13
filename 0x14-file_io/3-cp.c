@@ -19,7 +19,7 @@ int main(int ac, char **av)
 	if (av[1] == NULL)
 		read_failure(av[1]);
 	if (av[2] == NULL)
-		write_failure(av[2]);
+		read_failure(av[2]);
 	/* allocate space for file to be read and printed to std out*/
 	buffer = malloc(sizeof(ch) * BUFF_SIZE);
 	/* open file read from (actual file to be copied)*/
@@ -33,7 +33,6 @@ int main(int ac, char **av)
 		write_failure(av[2]);
 	/* read from source file, copy into buffer */
 	read_value = read(fd_from, buffer, BUFF_SIZE);
-
 	/* write to target file, from buffer - while true (greater than 0)*/
 	while (read_value)
 	{
