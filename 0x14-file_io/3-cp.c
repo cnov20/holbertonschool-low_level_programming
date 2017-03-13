@@ -19,17 +19,17 @@ int main(int ac, char **av)
 	if (ac != 3)
 		usage_failure();
 
-	if(av[1] == NULL)
+	if (av[1] == NULL)
 		read_failure(av[1]);
 
-	if(av[2] == NULL)
+	if (av[2] == NULL)
 		write_failure(av[2]);
 
 	/* allocate space for file to be read and printed to std out*/
 	buffer = malloc(sizeof(char) * BUFF_SIZE);
 
 	/* open */
-       	fd_from = open(av[1], O_RDONLY);
+	fd_from = open(av[1], O_RDONLY);
 
 	if (fd_from == -1)
 		read_failure(av[1]);
@@ -40,13 +40,11 @@ int main(int ac, char **av)
 	if (fd_to == -1)
 		write_failure(av[2]);
 
-
 	if (fd_write == -1)
 		return (-1);
 
 	/* close */
 	fd_close = close(fd_from);
-
 	if (fd_close == -1)
 		return (-1);
 
@@ -70,6 +68,7 @@ void usage_failure(void)
 
 /**
  * read_failure - prints to standard error if file can't be read
+ * @fd: file descriptor pointer
  *
  * Return: nothing - void
  */
@@ -86,6 +85,7 @@ void read_failure(char *fd)
 
 /**
  * write_failure - prints to standard error if file can't be written
+ * @fd: file descriptor pointer
  *
  * Return: nothing - void
  */
@@ -101,6 +101,7 @@ void write_failure(char *fd)
 
 /**
  * close_failure - prints to standard error if file can't be closed
+ * @fd: file descriptor
  *
  * Return: nothing - void
  */
