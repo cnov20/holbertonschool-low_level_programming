@@ -12,24 +12,27 @@ int create_file(const char *filename, char *text_content)
 {
 
 	int fd_open, fd_write, fd_close;
-	char *buffer;
+	int length;
+/*	mode_t file_permissions = S_IRUSR || S_IWUSR; */
 
 	if (filename == NULL)
 		return (-1);
 
-	if (text_content == NULL)
-	{
-		return (1);
-	}
-
-	/* allocate space for file to be read and printed to std out*/
-	buffer = malloc(sizeof(char));
+	fd_open = fd_write = fd_close = length = 0;
 
 	/* open */
-	fd_open = open(filename, O_RDWR);
+	fd_open = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0600);
 
 	/* write */
-	fd_write = write(STDOUT_FILENO, buffer, *text_content);
+	if (!text_content)
+	{
+		while (text_content[length] != '\0')
+		{
+			length++;
+		}
+
+		fd_write = write(fd_open, text_content, length);
+	}
 
 	if (fd_write == -1)
 		return (-1);
