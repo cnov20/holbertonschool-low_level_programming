@@ -73,11 +73,8 @@ int main(int ac, char **av)
 
 void usage_failure(void)
 {
-	if (ac != 3)
-	{
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
-	}
 }
 
 /**
@@ -89,12 +86,8 @@ void usage_failure(void)
 
 void read_failure(char *fd)
 {
-	if (fd_from == -1)
-	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", fd);
 		exit(98);
-	}
-
 }
 
 /**
@@ -106,11 +99,8 @@ void read_failure(char *fd)
 
 void write_failure(char *fd)
 {
-	if (fd_to == -1)
-	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", fd);
 		exit(99);
-	}
 }
 
 /**
@@ -122,9 +112,6 @@ void write_failure(char *fd)
 
 void close_failure(int fd)
 {
-	if (fd_close == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %s\n", fd);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
 		exit(100);
-	}
 }
