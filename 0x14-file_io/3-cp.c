@@ -14,25 +14,7 @@ int main(int ac, char **av)
 	int fd_from, fd_to, fd_close;
 	int length;
 	mode_t mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
-	char *buffer [1,204];
-
-
-	if (ac != 3)
-	{
-		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
-		exit(97);
-	}
-
-	if (file_from == NULL)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[0]);
-		exit(98);
-	}
-	if (file_to == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[1])
-
-	}
+	char *buffer[1204];
 
 	if (filename == NULL)
 		return (-1);
@@ -69,4 +51,47 @@ int main(int ac, char **av)
 		return (-1);
 
 	return (1);
+}
+
+/**
+ * usage_failure - prints to standard error if argument count is incorrect
+ *
+ * Return: nothing - void
+ */
+
+void usage_failure(void)
+{
+	if (ac != 3)
+	{
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+		exit(97);
+	}
+}
+
+void read_failure(void)
+{
+	if (fd_from == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
+		exit(98);
+	}
+
+}
+
+void write_failure(void)
+{
+	if (fd_to == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
+		exit(99);
+	}
+}
+
+void close_failure(void)
+{
+	if(fd_close == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %s\n", fd_close);
+		exit(100);
+	}
 }
