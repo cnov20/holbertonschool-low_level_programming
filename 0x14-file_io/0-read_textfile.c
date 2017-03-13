@@ -11,15 +11,16 @@
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 
-	int fd_open, fd_read, fd_write;
+	int fd_open, fd_read, fd_write, fd_close;
 	char *buffer;
+	char ch;
 
 	if (filename == NULL)
 		return (0);
 
 	/* malloc space for file to be read and printed to std out */
 
-	buffer = malloc(sizeof(char) * letters);
+	buffer = malloc(sizeof(ch) * letters);
 
 	/* open */
 
@@ -34,6 +35,12 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	fd_write = write(STDOUT_FILENO, buffer, fd_read);
 
 	if (fd_write == -1)
+		return (0);
+
+	/* close */
+
+	fd_close = close(fd_open);
+	if (fd_close == -1)
 		return (0);
 
 	return (fd_read);
