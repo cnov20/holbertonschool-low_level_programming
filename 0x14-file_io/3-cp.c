@@ -42,6 +42,7 @@ int main(int ac, char **av)
 		write_value = write(fd_to, buffer, read_value);
 		if (write_value == -1)
 			write_failure(av[2]);
+		read_value = read(fd_from, buffer, BUFF_SIZE);
 	}
 	/* close source file and target file*/
 	if (close(fd_from) == -1)
