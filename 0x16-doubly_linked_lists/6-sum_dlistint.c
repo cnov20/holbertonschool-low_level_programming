@@ -5,7 +5,6 @@
  *
  * Return: sum of list data or 0 - if list is empty
  */
-
 int sum_dlistint(dlistint_t *head)
 {
 	unsigned int sum = 0;
