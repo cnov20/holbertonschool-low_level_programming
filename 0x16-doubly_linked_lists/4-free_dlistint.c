@@ -1,8 +1,9 @@
 #include "lists.h"
 /**
- * free_dlisting - function that frees doubly linked list
+ * free_dlistint - function that frees doubly linked list
  * @head: pointer to first node of list
  *
+ * Return: nothing - void
  */
 
 void free_dlistint(dlistint_t *head)
