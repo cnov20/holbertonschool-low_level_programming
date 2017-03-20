@@ -2,7 +2,7 @@
 /**
  * delete_dnodeint_at_index - deltes node at given position of list
  * @head: pointer to pointer to first node of list
- * @idx: index of node - location within list
+ * @index: index of node - location within list
  *
  * Return: 1 - SUCCESS or -1 - FAILURE
  */
@@ -37,6 +37,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 
 		temp = temp->next;
 		node_number++;
+
 	}
 
 	return (-1);
