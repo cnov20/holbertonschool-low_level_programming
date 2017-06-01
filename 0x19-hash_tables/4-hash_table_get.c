@@ -20,6 +20,10 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	value = key_index((const unsigned char *)key, ht->size);
 
 	node = ht->array[value];
-	return (node->value);
+	while (node != NULL)
+	{
+		return (node->value);
+	}
 
+	return (0);
 }
