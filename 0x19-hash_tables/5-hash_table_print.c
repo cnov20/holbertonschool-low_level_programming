@@ -10,11 +10,13 @@
 void hash_table_print(const hash_table_t *ht)
 {
 	hash_node_t *temp_ptr;
+	unsigned long int index;
 
 	if (ht || ht->array)
 		return;
 
-	temp_ptr = ht->array;
+	index = 0;
+	temp_ptr = ht->array[index];
 	while (temp_ptr != NULL)
 	{
 		printf("%s : %s", temp_ptr->key, temp_ptr->value);
