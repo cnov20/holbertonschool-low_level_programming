@@ -24,6 +24,8 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	{
 		if (strcmp(key, temp_ptr->key) == 0)
 			return (temp_ptr->value);
+
+		temp_ptr = temp_ptr->next;
 	}
 
 	return (NULL);
