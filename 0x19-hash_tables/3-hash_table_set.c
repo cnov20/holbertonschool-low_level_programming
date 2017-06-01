@@ -16,7 +16,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	char *value_copy;
 	hash_node_t *new_node;
 
-	if (!ht || !ht->array || !key || !value || strlen(key) == 0)
+	if (!ht || !ht->array || !key || !value || str(key) == 0)
 	{
 		return (0);
 	}
@@ -39,6 +39,9 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	new_node->key = key_copy;
         new_node->value = value_copy;
 	new_node->next = NULL;
+
+	if (strlen(key_copy) == 0)
+		return (0);
 
 	return (1);
 
