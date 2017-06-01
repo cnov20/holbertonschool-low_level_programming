@@ -14,15 +14,12 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	unsigned long int value;
 	hash_node_t *temp_ptr;
 
-	if (!ht || !ht->array || !key)
+	if (!ht || !ht->array || !key || strlen(key) == NULL)
 		return (NULL);
 
 	value = key_index((const unsigned char *)key, ht->size);
 
 	temp_ptr = ht->array[value];
-
-	if (temp_ptr == NULL)
-		return (NULL);
 
 	while (temp_ptr != NULL)
 	{
