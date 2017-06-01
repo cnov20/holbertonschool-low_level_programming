@@ -37,12 +37,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	ht->array[index] = new_node;
 	new_node->key = key_copy;
-        new_node->value = value_copy;
+	new_node->value = value_copy;
 	new_node->next = NULL;
 
-	if (strlen(key_copy) == 0)
-		return (0);
-
 	return (1);
-
 }
