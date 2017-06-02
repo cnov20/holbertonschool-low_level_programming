@@ -23,13 +23,17 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	if (!hash_node)
 		return (NULL);
 
-	while (hash_node != NULL)
+	while (index < ht->size)
 	{
-		if (strcmp(hash_node->key, key) == 0)
-			return (hash_node->value);
 
-		hash_node = hash_node->next;
+		while (hash_node != NULL)
+		{
+			if (strcmp(hash_node->key, key) == 0)
+				return (hash_node->value);
+
+			hash_node = hash_node->next;
+		}
+		index++;
 	}
-
 	return (NULL);
 }
