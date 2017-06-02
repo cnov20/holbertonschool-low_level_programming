@@ -23,6 +23,8 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 
 	if (!hash_node)
 		return (NULL);
+	if (value > (ht->size))
+		return (NULL);
 
 	while (hash_node)
 	{
