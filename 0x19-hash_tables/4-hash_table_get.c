@@ -12,21 +12,24 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 {
 
 	unsigned long int value;
-	hash_node_t *temp_ptr;
+	hash_node_t *hash_node;
 
 	if (!ht || !ht->array || !key || strlen(key) == 0)
 		return (NULL);
 
 	value = key_index((const unsigned char *)key, ht->size);
 
-	temp_ptr = ht->array[value];
+	hash_node = ht->array[value];
 
-	while (temp_ptr != NULL)
+	if (!hash_node)
+		return (NULL);
+
+	while (hash_node)
 	{
-		if (strcmp(key, temp_ptr->key) == 0)
-			return (temp_ptr->value);
+		if (strcmp(hash_node->key, key) == 0)
+			return (hash_node->value);
 
-		temp_ptr = temp_ptr->next;
+		hash_node = hash_node->next;
 	}
 
 	return (NULL);
