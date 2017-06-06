@@ -20,7 +20,7 @@ void insertion_sort_list(listint_t **list)
 	temp = *list;
 	current = temp->next;
 
-	while(temp != NULL)
+	while (temp != NULL)
 	{
 
 		printf("Current: %d\n", current->n);
@@ -32,9 +32,9 @@ void insertion_sort_list(listint_t **list)
 			swap = temp;
 			temp = temp->next;
 		}
-/*		prev_node = sorted;
-		sorted->prev->next = sorted;
-*/
+/*		prev_node = sorted; */
+/*		sorted->prev->next = sorted; */
+
 		else
 		{
 			current = current->next;
