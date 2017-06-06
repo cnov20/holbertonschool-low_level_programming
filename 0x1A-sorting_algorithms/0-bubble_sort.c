@@ -20,8 +20,6 @@ void bubble_sort(int *array, size_t size)
 	{
 		for (j = 0; j < size - 1 - i; j++)
 		{
-			printf("This is size: %lu\n", size);
-
 			if (array[j] > array[j + 1])
 			{
 				temp = array[j];
