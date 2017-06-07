@@ -11,6 +11,7 @@
 void quick_sort(int *array, size_t size)
 {
 	int start, end;
+
 	start = 0;
 	end = size - 1;
 
@@ -29,26 +30,26 @@ void quick_sort(int *array, size_t size)
 
 void recursive_sort(int *array, int start, int end, size_t size)
 {
-	int pivot_point;
+	int pivot;
 
 	if (start < end)
 	{
-		pivot_point = partition(array, start, end, size);
-		recursive_sort(array, start, pivot_point - 1, size);
-		recursive_sort(array, pivot_point + 1, end, size);
+		pivot = partition(array, start, end, size);
+		recursive_sort(array, start, pivot - 1, size);
+		recursive_sort(array, pivot + 1, end, size);
 	}
 }
 
 
 /**
- * partition - sets value of certain index to compare all other elements against
+ * partition - sets value of certain index to compare other elements against
  * @array: given array to figure out pivot value for
  * @start: start of array - lowest index
  * @end: end of array - highest index
+ * @size: size of given array
  *
  * Return: int - value of pivot
  */
-
 
 int partition(int *array, int start, int end, size_t size)
 {
@@ -58,7 +59,7 @@ int partition(int *array, int start, int end, size_t size)
 	pivot_point = array[end];
 	i = start - 1;
 
-	for(j = start; j <= end; j++)
+	for (j = start; j <= end; j++)
 	{
 		if (array[j] <= pivot_point)
 		{
