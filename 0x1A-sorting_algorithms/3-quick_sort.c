@@ -12,6 +12,9 @@ void quick_sort(int *array, size_t size)
 {
 	int start, end;
 
+	if(!array || !size || size < 2)
+		return;
+
 	start = 0;
 	end = size - 1;
 
