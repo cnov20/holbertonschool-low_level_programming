@@ -65,11 +65,11 @@ int partition(int *array, int start, int end, size_t size)
 		{
 			i++;
 			swap_values(array, i, j);
-			print_array(array, size);
 		}
 
 	}
 
+	print_array(array, size);
 	return (i);
 }
 
