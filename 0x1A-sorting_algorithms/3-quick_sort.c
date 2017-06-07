@@ -54,22 +54,27 @@ void recursive_sort(int *array, int start, int end, size_t size)
 int partition(int *array, int start, int end, size_t size)
 {
 	int pivot_point;
-	int i, j;
+	int i, j, flag;
 
 	pivot_point = array[end];
 	i = start - 1;
 
 	for (j = start; j <= end; j++)
 	{
+		flag = 0;
 		if (array[j] <= pivot_point)
 		{
 			i++;
-			swap_values(array, i, j);
+			flag = 1;
+			if (i != j && flag)
+			{
+				swap_values(array, i, j);
+				print_array(array, size);
+			}
 		}
 
 	}
 
-	print_array(array, size);
 	return (i);
 }
 
