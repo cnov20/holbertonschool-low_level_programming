@@ -10,39 +10,44 @@
 void insertion_sort_list(listint_t **list)
 {
 
-	listint_t *current;
-	listint_t *temp;
-	listint_t *swap;
+	listint_t *current, *temp;
 
 	if (!list || !*list)
 		return;
 
-	temp = *list;
-	current = temp->next;
-
-	while (temp != NULL)
+	current = *list;
+	while (current != NULL)
 	{
 
-		printf("Current: %d\n", current->n);
-		printf("This is temp: %d\n", temp->n);
-		if (temp->n > current->n)
-		{
-			current = current->prev;
-			temp = swap;
-			swap = temp;
-			temp = temp->next;
-		}
-/*		prev_node = sorted; */
-/*		sorted->prev->next = sorted; */
+			while(current->prev != NULL && current->prev->n > current->n)
+			{
+				temp = current;
+				if (current->next != NULL)
+					current->next->prev = temp->prev;
+				current->prev->next = temp->next;
 
-		else
-		{
-			current = current->next;
-			swap = NULL;
-		}
-		print_list(*list);
+
+				current = current->prev;
+				temp->prev = current->prev;
+				temp->next = current;
+
+				if (current->prev != NULL)
+					current->prev->next = temp;
+				current->prev = temp;
+
+				printf("this is now current: %d\n", current->n);
+				printf("this is now temp: %d\n", temp->n);
+
+				current = current->prev;
+
+				print_list(*list);
+
+			}
+
+		/*printf("hello current: %d\n", current->n);*/
+
+		current = current->next;
 
 	}
-
 
 }
