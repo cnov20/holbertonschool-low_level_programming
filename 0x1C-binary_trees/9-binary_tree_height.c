@@ -5,7 +5,7 @@
  * @tree: pointer to root node of tree to traverse
  *
  *
- * Return - Height of tree or 0 upon Failure
+ * Return: Height of tree or 0 upon Failure
  */
 
 size_t binary_tree_height(const binary_tree_t *tree)
@@ -17,7 +17,7 @@ size_t binary_tree_height(const binary_tree_t *tree)
 	if (tree == NULL)
 		return (0);
 
-	while(tree->left != NULL)
+	while (tree->left != NULL)
 	{
 		height_left += 1;
 		tree = tree->left;
