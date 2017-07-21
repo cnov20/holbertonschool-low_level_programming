@@ -14,7 +14,7 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 {
 	int left_height = 0;
 	int right_height = 0;
-	int size= 0;
+	int size = 0;
 	int full = 0;
 	int eq_result = 0;
 
@@ -33,7 +33,7 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 
 	eq_result = _pow_recursion(2, left_height + 1) - 1;
 
-	if(left_height == right_height && full == 1 && size == eq_result)
+	if (left_height == right_height && full == 1 && size == eq_result)
 		return (1);
 
 	return (0);
