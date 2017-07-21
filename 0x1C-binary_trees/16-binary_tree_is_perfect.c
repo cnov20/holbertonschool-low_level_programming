@@ -7,7 +7,7 @@
  * binary_tree_is_perfect - checks if a binary tree is perfect
  * @tree: pointer to root node of tree to be checked
  *
- * Return - 1 if perfect - 0 if not perfect or tree is NULL
+ * Return: 1 if perfect - 0 if not perfect or tree is NULL
  */
 
 int binary_tree_is_perfect(const binary_tree_t *tree)
