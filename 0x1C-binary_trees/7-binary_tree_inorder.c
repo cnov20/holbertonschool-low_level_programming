@@ -3,9 +3,9 @@
 /**
  * binary_tree_inorder - traverses through binary tree, via in-order fashion
  * @tree: pointer to root node of tree to traverse
- * @func: pointer to function to call for each node - value in node as parameter
+ * @func: pointer to function to call for each node - node value as parameter
  *
- * Return - Nothing, Void
+ * Return: Nothing, Void
  */
 
 void binary_tree_inorder(const binary_tree_t *tree, void (*func)(int))
