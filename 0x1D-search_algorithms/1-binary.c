@@ -37,7 +37,7 @@ int binary_search(int *array, size_t size, int value)
 		}
 		else if (value > array[mid])
 		{
-			low = mid + 1;
+			low = mid;
 		}
 
 		mid = (high + low) / 2;
@@ -47,6 +47,15 @@ int binary_search(int *array, size_t size, int value)
 	return (-1);
 }
 
+
+/**
+ * print_search - function prints given array,
+ * in conjunction with the binary search method(algorithm)
+ * @low: lowest value in given, sorted array
+ * @high: highest value in given, sorted array
+ * @array: pointer to the first element of array to be searched
+ * Return: Nothing - void
+ */
 
 void print_search(unsigned int low, unsigned int high, int *array)
 {
